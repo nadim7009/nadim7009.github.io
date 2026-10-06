@@ -294,10 +294,9 @@ body.ind .hero:after{content:"";position:absolute;top:-60px;bottom:-20px;left:50
 /* active nav */
 .links a.active{color:var(--ink);position:relative}
 .links a.active:after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:var(--accent)}
-/* spotlight on cards */
-.spot{position:relative}
-.spot:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(320px circle at var(--mx,50%) var(--my,50%),var(--accent-soft),transparent 65%);opacity:0;transition:opacity .3s}
-.spot:hover:after{opacity:1}
+/* card hover: border only, nothing over the text */
+.pub,.proj,.icard,.ecard,.skill,.feature,.facts-list{transition:transform .25s,box-shadow .25s,border-color .25s}
+.pub:hover,.proj:hover,.icard:hover,.ecard:hover,.skill:hover,.feature:hover{border-color:var(--accent)}
 /* tool marquee */
 .marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;margin-bottom:10px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
 .mq{display:flex;gap:44px;width:max-content;animation:mq 38s linear infinite}
@@ -896,7 +895,7 @@ var rt2;addEventListener('resize',function(){clearTimeout(rt2);rt2=setTimeout(fu
 (function(){var N=['The only group worth emailing. Uplift models aim straight at them.','They buy either way, so the email adds nothing. A response model still loves them.','No email changes their mind. Contacting them only costs money.','The email makes them less likely to buy. A correlation-based model can still target them.'];
 var bs=document.querySelectorAll('#uplift button'),note=document.getElementById('upnote');
 bs.forEach(function(b){b.onclick=function(){bs.forEach(function(z){z.classList.toggle('on',z===b)});note.textContent=N[+b.dataset.u]}})})();
-/* progress, active nav, spotlight, count-up */
+/* progress, active nav, count-up */
 (function(){
 var prog=document.getElementById('prog');
 var links=[].slice.call(document.querySelectorAll('.links a'));
@@ -905,8 +904,6 @@ function onScroll(){var h=document.documentElement;prog.style.width=(h.scrollTop
   var best=null,bt=-1e9;links.forEach(function(a){var s=document.querySelector(a.getAttribute('href'));if(!s)return;var t=s.getBoundingClientRect().top;if(t<160&&t>bt){bt=t;best=a}});
   links.forEach(function(a){a.classList.toggle('active',a===best)})}
 addEventListener('scroll',onScroll,{passive:true});onScroll();
-document.querySelectorAll('.pub,.proj,.icard,.qtile,.ecard,.skill,.feature,.timeline .item,.facts-list').forEach(function(el){el.classList.add('spot')});
-document.addEventListener('pointermove',function(e){var el=e.target.closest&&e.target.closest('.spot');if(!el)return;var r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true});
 window.countUp=function(){document.querySelectorAll('.facts b[data-n]').forEach(function(b){var target=parseFloat(b.dataset.n),dec=(b.dataset.n.split('.')[1]||'').length,t0=performance.now();
   if(matchMedia('(prefers-reduced-motion: reduce)').matches){b.textContent=b.dataset.n;return}
   (function step(t){var k=Math.min(1,(t-t0)/1100),e=1-Math.pow(1-k,3);b.textContent=(target*e).toFixed(dec);if(k<1)requestAnimationFrame(step)})(t0)})};
