@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nadim Mahmud | Machine Learning Researcher</title>
+<meta name="description" content="Nadim Mahmud, machine learning researcher and engineer from Bangladesh. Robust and explainable deep learning for images, agriculture and the environment.">
+<meta property="og:title" content="Nadim Mahmud | Machine Learning Researcher">
+<meta property="og:description" content="Robust and explainable deep learning. Open to MS/PhD positions and machine learning engineer roles.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nadim7009.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317202e'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-size='36' text-anchor='middle' fill='%23f7f5f0'%3EN%3C/text%3E%3Ccircle cx='48' cy='44' r='4' fill='%232f8f6c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f5f0;--paper:#fffdf8;--ink:#17202e;--muted:#5b6574;--line:#e3ded3;--accent:#1f5f4a;--accent-soft:#e3efe9;--warm:#c8562d;--warm-soft:#f7e6dd;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+/* nav */
+header{position:sticky;top:0;z-index:30;background:rgba(247,245,240,.85);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+header.scrolled{border-color:var(--line)}
+nav{display:flex;justify-content:space-between;align-items:center;height:68px;gap:16px}
+.logo{font:600 21px Fraunces,serif;text-decoration:none}
+.logo span{color:var(--accent)}
+.links{display:flex;gap:24px;font-size:14px}
+.links a{text-decoration:none;color:var(--muted);transition:color .2s}
+.links a:hover{color:var(--ink)}
+.mode{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--paper);flex-shrink:0}
+.mode button{font:500 13px Inter;padding:6px 13px;border-radius:999px;border:0;background:none;cursor:pointer;color:var(--muted)}
+.mode button.on{background:var(--accent);color:#fff}
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:48px 24px 90px;min-height:calc(100vh - 68px)}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:13px;color:var(--accent);font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(31,95,74,.35)}70%{box-shadow:0 0 0 9px rgba(31,95,74,0)}100%{box-shadow:0 0 0 0 rgba(31,95,74,0)}}
+h1{font:600 clamp(40px,6vw,74px)/1.02 Fraunces,serif;margin:18px 0 20px;letter-spacing:-.02em}
+h1 em,h2 em{font-style:italic;color:var(--accent);font-weight:500}
+.lede{font-size:18px;color:var(--muted);max-width:530px}
+.lede strong{color:var(--ink);font-weight:600}
+.cta{display:flex;gap:12px;margin:30px 0 34px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px Inter;padding:13px 20px;border-radius:11px;text-decoration:none;border:1px solid var(--ink);transition:transform .2s,box-shadow .2s;cursor:pointer}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 20px -12px rgba(23,32,46,.6)}
+.btn.p{background:var(--ink);color:#fff}
+.btn.s{background:transparent;color:var(--ink)}
+.btn svg{width:16px;height:16px}
+.facts{display:flex;gap:34px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px}
+.facts div{font-size:13px;color:var(--muted)}
+.facts b{display:block;font:600 26px Fraunces,serif;color:var(--ink)}
+.stage{position:relative;aspect-ratio:4/5;max-height:640px;width:100%}
+.card-img{position:absolute;inset:0;border-radius:26px;overflow:hidden;background:var(--paper);border:1px solid var(--line);box-shadow:0 40px 70px -40px rgba(23,32,46,.45)}
+canvas{display:block;width:100%;height:100%;touch-action:pan-y}
+.chip{position:absolute;font:500 12px Inter;padding:6px 11px;border-radius:999px;background:rgba(255,253,248,.93);border:1px solid var(--line);pointer-events:none}
+.ctrl{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:4px;background:rgba(255,253,248,.95);border:1px solid var(--line);border-radius:999px;padding:4px}
+.ctrl button{white-space:nowrap;font:500 12px Inter;padding:6px 11px;border-radius:999px;border:0;background:none;cursor:pointer;color:var(--muted)}
+.ctrl button.on{background:var(--ink);color:#fff}
+.caption{text-align:center;font-size:13px;color:var(--muted);margin-top:14px}
+/* sections */
+main{display:flex;flex-direction:column}
+section.block{padding:90px 0;border-top:1px solid var(--line)}
+.kicker{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--warm);margin-bottom:10px}
+h2{font:600 clamp(30px,4vw,44px)/1.1 Fraunces,serif;letter-spacing:-.015em;margin-bottom:18px}
+.intro{color:var(--muted);max-width:640px;font-size:17px;margin-bottom:44px}
+h3{font:600 20px/1.3 Fraunces,serif}
+.about{display:grid;grid-template-columns:1.25fr .75fr;gap:56px}
+.about p{font-size:17px;color:#333c4a;margin-bottom:16px}
+.facts-list{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:8px 24px}
+.facts-list div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:14px}
+.facts-list div:last-child{border:0}
+.facts-list span{color:var(--muted)}
+.facts-list b{font-weight:600;text-align:right}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chips span{font-size:13px;padding:7px 13px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:500}
+/* research */
+.research-top{display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:center;margin-bottom:46px}
+.leafcard{position:relative;aspect-ratio:1/1;border-radius:var(--r);overflow:hidden;background:var(--paper);border:1px solid var(--line)}
+.pubs{display:grid;gap:18px}
+.pub{display:grid;grid-template-columns:56px 1fr;gap:20px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.pub:hover{transform:translateY(-3px);box-shadow:0 24px 40px -30px rgba(23,32,46,.5);border-color:#d3cdbf}
+.pub .num{font:600 30px Fraunces,serif;color:var(--line)}
+.pub:hover .num{color:var(--accent)}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.badge{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--warm-soft);color:var(--warm)}
+.badge.g{background:var(--accent-soft);color:var(--accent)}
+.badge.n{background:#eceae4;color:var(--muted)}
+.pub .venue{font-size:14px;color:var(--muted);margin:6px 0 10px}
+.pub .authors{font-size:14px;margin-bottom:10px}
+.pub .authors b{font-weight:600;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
+.pub p{font-size:15px;color:#3b4453}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tags span{font-size:12px;padding:4px 9px;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
+.note{font-size:14px;color:var(--muted);margin-top:22px;padding:14px 18px;border-left:3px solid var(--accent);background:var(--paper);border-radius:0 10px 10px 0}
+/* projects */
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-bottom:22px}
+.feature .fig{background:#fff;display:flex;align-items:center;justify-content:center;padding:22px;border-right:1px solid var(--line)}
+.feature .body{padding:34px}
+.feature .body p{color:#3b4453;font-size:15px;margin:12px 0}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+.metrics div{background:var(--bg);border-radius:12px;padding:12px 14px;font-size:12px;color:var(--muted)}
+.metrics b{display:block;font:600 22px Fraunces,serif;color:var(--ink)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.proj{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:28px;transition:transform .25s,box-shadow .25s}
+.proj:hover{transform:translateY(-3px);box-shadow:0 24px 40px -30px rgba(23,32,46,.5)}
+.proj p{color:#3b4453;font-size:15px;margin-top:10px}
+.link{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:14px;color:var(--accent);text-decoration:none;margin-top:16px}
+.link:hover{text-decoration:underline}
+.muted-link{font-size:14px;color:var(--muted);margin-top:16px}
+/* experience */
+.timeline{position:relative;padding-left:30px}
+.timeline:before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.item{position:relative;padding-bottom:34px}
+.item:before{content:"";position:absolute;left:-30px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:3px solid var(--accent)}
+.item .when{font-size:13px;color:var(--muted);font-weight:500}
+.item .org{color:var(--muted);font-size:15px}
+.item p{font-size:15px;color:#3b4453;margin-top:6px;max-width:680px}
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skill{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.skill h3{font-size:17px;margin-bottom:12px}
+.skill .tags{margin-top:0}
+.skill .tags span{font-size:13px;color:var(--ink);background:var(--bg);border-color:transparent}
+/* education */
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.edu .proj .meta{font-size:14px;color:var(--muted)}
+/* contact */
+.contact{background:var(--ink);color:#f3f0e8;border-radius:28px;padding:64px;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;margin:30px 0 40px}
+.contact h2{color:#fff}
+.contact h2 em{color:#8fd1b4}
+.contact p{color:#b9c0cb;font-size:17px}
+.contact .btn.p{background:#f7f5f0;color:var(--ink);border-color:#f7f5f0}
+.contact .btn.s{color:#f7f5f0;border-color:#5c6675}
+.clist{display:grid;gap:12px;align-content:center}
+.clist a{display:flex;align-items:center;gap:12px;text-decoration:none;padding:14px 18px;border:1px solid #333e4f;border-radius:12px;transition:background .2s,border-color .2s;font-size:15px}
+.clist a:hover{background:#222d3e;border-color:#4a5568}
+.clist svg{width:18px;height:18px;flex-shrink:0;opacity:.85}
+footer{padding:10px 0 40px;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+/* paper visuals */
+.pub.has-viz{grid-template-columns:56px 1fr 340px;align-items:start}
+.pub.wide-viz{grid-template-columns:56px 1fr}
+.pub.wide-viz .viz{grid-column:2}
+.viz{margin:0}
+.viz figcaption,.vizcap{font-size:13px;color:var(--muted);margin-top:10px;line-height:1.5}
+.g9{display:grid;grid-template-columns:64px repeat(3,1fr);gap:6px;align-items:center}
+.g9 .ch{font-size:12px;color:var(--muted);text-align:center}
+.g9 .rh{font-size:12px;color:var(--muted);font-weight:500}
+.g9c{width:100%;aspect-ratio:1/1;height:auto;border-radius:8px;background:#f3efe6}
+.semwrap{position:relative;aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:#222}
+.seg{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:4px;width:max-content;max-width:100%}
+.seg button{white-space:nowrap;font:500 12px Inter;padding:6px 11px;border-radius:999px;border:0;background:none;cursor:pointer;color:var(--muted)}
+.seg button.on{background:var(--ink);color:#fff}
+.textbtn{font:600 13px Inter;color:var(--accent);background:none;border:0;cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:3px}
+.carbon{display:grid;grid-template-columns:260px 1fr;gap:28px;margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
+.carbon figcaption{grid-column:1/-1;margin-top:0}
+.sliders{display:grid;gap:12px}
+.sliders label{display:grid;grid-template-columns:1fr auto;gap:4px 10px;font-size:13px;color:var(--ink);font-weight:500}
+.sliders output{font-variant-numeric:tabular-nums;color:var(--muted);font-weight:500}
+.sliders input{grid-column:1/-1;width:100%;accent-color:var(--accent)}
+.sliders.small{grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.ctotal{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:12px}
+.ctotal b{font:600 28px Fraunces,serif;color:var(--ink)}
+.cbars{display:grid;gap:8px}
+.crow{display:grid;grid-template-columns:120px 1fr 64px;gap:10px;align-items:center;font-size:13px}
+.crow .lab{color:var(--ink)}
+.crow .val{white-space:nowrap;text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+.ctrack{position:relative;height:16px}
+.ctrack:before{content:"";position:absolute;left:50%;top:-3px;bottom:-3px;width:1px;background:#b9b3a6}
+.cbar{position:absolute;top:2px;height:12px;border-radius:4px;transition:all .25s ease}
+.clegend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:12px}
+.clegend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+/* irrigasmart tabs */
+.feature .tabsfig{display:block;padding:22px;background:var(--paper)}
+.tabsfig .seg{margin:0 0 16px}
+.tab{display:none}.tab.on{display:block}
+.tab img{width:100%;border-radius:10px;background:#fff}
+.soilhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:5px 11px;border-radius:999px}
+.pill.ok{background:var(--accent-soft);color:var(--accent)}
+.pill.risk{background:var(--warm-soft);color:#a8431f}
+.soilnow{font-size:12px;color:var(--muted)}
+.soilwrap{position:relative;height:250px}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:#fff;font-size:12px;padding:6px 9px;border-radius:8px;white-space:nowrap;opacity:0;transition:opacity .15s;transform:translate(-50%,-120%)}
+@media (max-width:960px){
+  .hero{grid-template-columns:1fr;gap:50px;padding-top:24px;min-height:0}
+  .stage{max-width:440px;margin:0 auto}
+  .links{display:none}
+  .about,.research-top,.feature,.grid2,.edu,.contact{grid-template-columns:1fr}
+  .research-top .leafcard{max-width:380px}
+  .feature .fig{border-right:0;border-bottom:1px solid var(--line)}
+  .skills{grid-template-columns:1fr 1fr}
+  .pub.has-viz{grid-template-columns:56px 1fr}.pub.has-viz .viz{grid-column:2;max-width:420px}
+  .carbon{grid-template-columns:1fr}
+  .contact{padding:40px 28px}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px}.hero{padding:20px 16px 60px}
+  section.block{padding:64px 0}
+  .skills{grid-template-columns:1fr}
+  .pub{grid-template-columns:1fr;gap:6px;padding:22px}
+  .pub.has-viz,.pub.wide-viz{grid-template-columns:1fr}.pub.has-viz .viz,.pub.wide-viz .viz{grid-column:1;margin-top:14px}
+  .sliders.small{grid-template-columns:1fr}
+  .crow{grid-template-columns:88px minmax(0,1fr) 66px;gap:8px}
+  .feature,.pub.has-viz,.pub.wide-viz,.carbon{grid-template-columns:minmax(0,1fr)}
+  .seg{width:auto}
+  .feature .tabsfig{padding:14px}
+  .pub .num{font-size:22px}
+  .feature .body,.proj{padding:22px}
+  .metrics{grid-template-columns:1fr 1fr 1fr;gap:8px}.metrics b{font-size:18px}
+  .facts{gap:22px}
+  .logo{font-size:19px}
+}
+</style>
+</head>
+<body>
+<header id="top"><div class="wrap"><nav>
+  <a class="logo" href="#">Nadim Mahmud<span>.</span></a>
+  <div class="links"><a href="#about">About</a><a href="#research">Research</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
+  <div class="mode" role="tablist" aria-label="View"><button data-m="research" class="on">Research</button><button data-m="industry">Industry</button></div>
+</nav></div></header>
+
+<div class="wrap hero">
+  <div class="rv">
+    <span class="eyebrow"><i></i><span data-r="Open to MS and PhD positions" data-i="Open to machine learning engineer roles">Open to MS and PhD positions</span></span>
+    <h1 data-r="Models that still work when the data gets &lt;em&gt;messy&lt;/em&gt;." data-i="I build ML models and test them &lt;em&gt;before&lt;/em&gt; they ship.">Models that still work when the data gets <em>messy</em>.</h1>
+    <p class="lede" data-r="I'm &lt;strong&gt;Nadim Mahmud&lt;/strong&gt;, a machine learning researcher from Bangladesh. I study how deep learning models hold up under blur, noise and bad lighting, and how to explain what they see, with a focus on agriculture and the environment." data-i="I'm &lt;strong&gt;Nadim Mahmud&lt;/strong&gt;, a machine learning engineer working in Python with PyTorch and scikit-learn. I build image classification, segmentation and tabular models, and I check them with leakage-safe splits, stress tests and clear explanations.">I'm <strong>Nadim Mahmud</strong>, a machine learning researcher from Bangladesh. I study how deep learning models hold up under blur, noise and bad lighting, and how to explain what they see, with a focus on agriculture and the environment.</p>
+    <div class="cta">
+      <a class="btn p cvlink" href="Nadim_Mahmud_Research_CV.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg><span data-r="Research CV" data-i="Resume">Research CV</span></a>
+      <a class="btn s" href="#research" data-r="See my research" data-i="See my projects" id="cta2">See my research</a>
+    </div>
+    <div class="facts">
+      <div><b>3</b>papers under review</div>
+      <div><b>3.73</b>CGPA, data science major</div>
+      <div><b>5</b>ML and deep learning projects</div>
+    </div>
+  </div>
+  <div class="rv">
+    <div class="stage"><div class="card-img"><canvas id="lens" aria-label="Portrait of Nadim Mahmud, half clean and half corrupted"></canvas></div>
+      <span class="chip" style="left:14px;top:14px" id="lensLabel">Severe blur</span><span class="chip" style="right:14px;top:14px">Clean</span>
+      <div class="ctrl" id="lensCtrl"><button class="on" data-k="blur">Blur</button><button data-k="noise">Noise</button><button data-k="dark">Low light</button></div>
+    </div>
+    <p class="caption">Move across the photo. Would your model still recognise me?</p>
+  </div>
+</div>
+
+<main class="wrap" id="main">
+
+<section class="block" id="about" data-order-r="1" data-order-i="1">
+  <div class="kicker rv">About</div>
+  <div class="about">
+    <div class="rv">
+      <h2>One question keeps coming back in my <em>work</em>.</h2>
+      <p>Does a model that scores well on a clean benchmark still work on real data? I have asked it about plant disease photos, microscope images of microplastics, carbon-footprint survey data and soil sensors on farms. The answer is often "less than you'd think", and finding out why is the part I enjoy most.</p>
+      <p>I'm in the final semester of a B.Sc. in Software Engineering at Daffodil International University in Dhaka, with a major in data science. I work as a machine learning intern at FlyRank AI and I'm writing my thesis on causal uplift modelling.</p>
+      <p>Next, I want to do a master's or PhD abroad on reliable and explainable computer vision, ideally for agriculture or environmental monitoring. I'm also open to machine learning engineer roles.</p>
+      <div class="chips"><span>Robustness to distribution shift</span><span>Explainable AI</span><span>Image segmentation</span><span>AI for agriculture and environment</span><span>Causal ML</span></div>
+    </div>
+    <div class="facts-list rv">
+      <div><span>Based in</span><b>Dhaka, Bangladesh</b></div>
+      <div><span>Degree</span><b>B.Sc. Software Engineering<br>Data Science major, 2026</b></div>
+      <div><span>CGPA</span><b>3.73 / 4.00</b></div>
+      <div><span>Now</span><b>ML Intern, FlyRank AI</b></div>
+      <div><span>Looking for</span><b>MS / PhD funding<br>ML engineer roles</b></div>
+      <div><span>ORCID</span><b><a href="https://orcid.org/0009-0002-9274-4850" target="_blank" rel="noopener">0009-0002-9274-4850</a></b></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="research" data-order-r="2" data-order-i="5">
+  <div class="research-top">
+    <div class="rv">
+      <div class="kicker">Research</div>
+      <h2>Papers <em>under review</em></h2>
+      <p class="intro" style="margin-bottom:0">Three papers submitted in 2026, one journal article and two conference papers. Each one tests a model under conditions that are harder than the standard benchmark and then asks what the model is actually looking at.</p>
+    </div>
+    <div class="rv"><div class="leafcard"><canvas id="leaf" aria-label="Animated leaf with a Grad-CAM style attention map"></canvas>
+      <span class="chip" style="left:12px;top:12px">Grad-CAM style attention</span><span class="chip" style="left:12px;bottom:12px" id="leafLabel">looking at: lesion</span></div></div>
+  </div>
+  <div class="pubs">
+    <article class="pub has-viz rv"><div class="num">01</div><div>
+      <div class="badges"><span class="badge">Under review</span><span class="badge n">Journal</span><span class="badge g">First author</span></div>
+      <h3>Beyond clean accuracy: controlled robustness evaluation and corruption-aware training for plant disease classification</h3>
+      <div class="venue">International Journal of Information Technology and Computer Science (IJITCS), MECS Press</div>
+      <div class="authors"><b>Nadim Mahmud</b>, Md. Siyam Hossain, Mehedi Hasan Riyad, Jannatul Jeor Bushra, Jul Jalal Al-Mamur Sayor</div>
+      <p>Plant disease classifiers report very high accuracy on PlantVillage, where every photo is clean. I tested four CNNs on nine corrupted versions of the test set (noise, low light and blur at three levels) and trained ResNet50 with those corruptions to see how much of the lost accuracy comes back. Grad-CAM and calibration checks show whether the models look at the lesions and whether their confidence can be trusted.</p>
+      <div class="tags"><span>PyTorch</span><span>EfficientNetV2-S</span><span>ResNet50</span><span>DenseNet121</span><span>Robustness</span><span>Grad-CAM</span><span>Calibration</span></div>
+    </div>
+    <figure class="viz">
+      <div class="g9">
+        <span></span><span class="ch">Mild</span><span class="ch">Moderate</span><span class="ch">Severe</span>
+        <span class="rh">Noise</span><canvas class="g9c" data-k="noise" data-s="0"></canvas><canvas class="g9c" data-k="noise" data-s="1"></canvas><canvas class="g9c" data-k="noise" data-s="2"></canvas>
+        <span class="rh">Low light</span><canvas class="g9c" data-k="dark" data-s="0"></canvas><canvas class="g9c" data-k="dark" data-s="1"></canvas><canvas class="g9c" data-k="dark" data-s="2"></canvas>
+        <span class="rh">Blur</span><canvas class="g9c" data-k="blur" data-s="0"></canvas><canvas class="g9c" data-k="blur" data-s="1"></canvas><canvas class="g9c" data-k="blur" data-s="2"></canvas>
+      </div>
+      <figcaption>The nine test conditions from the benchmark, applied here to a drawn leaf. Every model saw all nine.</figcaption>
+    </figure></article>
+
+    <article class="pub has-viz rv"><div class="num">02</div><div>
+      <div class="badges"><span class="badge">Under review</span><span class="badge n">Conference</span></div>
+      <h3>Attention-enhanced deep learning for microplastic segmentation in scanning electron microscopy images</h3>
+      <div class="venue">International Conference on Advances in Artificial Intelligence (AAI 2026), Malaysia</div>
+      <div class="authors"><b>Nadim Mahmud</b> and co-authors</div>
+      <p>Counting and measuring microplastic particles in SEM images is slow by hand. I compared a U-Net with a four-gate Attention U-Net for pixel-level segmentation, removed the gates one at a time to see which ones matter, and tested both models under noise and changes in brightness and contrast.</p>
+      <div class="tags"><span>Semantic segmentation</span><span>U-Net</span><span>Attention U-Net</span><span>Ablation study</span><span>SEM imaging</span></div>
+    </div>
+    <figure class="viz">
+      <div class="semwrap"><canvas id="sem" aria-label="Drawn SEM-style image of microplastic particles"></canvas><span class="chip" style="left:10px;top:10px" id="semLabel">SEM image</span></div>
+      <div class="seg" id="semCtrl"><button class="on" data-v="img">Image</button><button data-v="mask">Mask</button><button data-v="overlay">Overlay</button><button data-v="att">Attention</button></div>
+      <figcaption>A drawn SEM-style sample with fragments, fibres and beads. Switch views to see what segmentation and an attention gate add. <button class="textbtn" id="semNew">Draw a new sample</button></figcaption>
+    </figure></article>
+
+    <article class="pub wide-viz rv"><div class="num">03</div><div>
+      <div class="badges"><span class="badge">Under review</span><span class="badge n">Conference</span></div>
+      <h3>Explainable machine learning for individual carbon-footprint prediction from traditional, digital and AI behaviours</h3>
+      <div class="venue">International conference, 2026</div>
+      <div class="authors"><b>Nadim Mahmud</b> and co-authors</div>
+      <p>Most carbon-footprint models use housing, transport and diet. This paper adds digital habits and AI use to the picture. I compared XGBoost, an MLP and Random Forest in a leakage-safe pipeline and used SHAP to see which behaviours drive each prediction.</p>
+      <div class="tags"><span>XGBoost</span><span>SHAP</span><span>Tabular ML</span><span>Sustainability</span></div>
+    </div>
+    <figure class="viz carbon">
+      <div class="sliders" id="cSliders"></div>
+      <div>
+        <div class="ctotal"><span>Your estimate</span><b id="cTotal">0</b><span id="cAvg"></span></div>
+        <div class="cbars" id="cBars" role="img" aria-label="Contribution of each habit compared with an average person"></div>
+        <div class="clegend"><span><i style="background:#c8562d"></i>pushes the estimate up</span><span><i style="background:#2f8f6c"></i>pushes it down</span></div>
+      </div>
+      <figcaption>How a SHAP explanation reads: each bar shows how far one habit moves your estimate away from an average person's. This toy uses rough public emission factors (car 0.17 kg/km, short return flight 250 kg, meat meal 1.5 kg, delivery 1 kg, AI chat 4 g, electricity 0.5 kg/kWh). It is not the model from the paper.</figcaption>
+    </figure></article>
+  </div>
+  <p class="note rv">Results are left off this page while the papers are in blind review. If you are a supervisor and would like to read a draft, email me and I will send it.</p>
+</section>
+
+<section class="block" id="projects" data-order-r="3" data-order-i="2">
+  <div class="kicker rv">Projects</div>
+  <h2 class="rv">Things I've <em>built</em></h2>
+  <p class="intro rv">Code and notebooks are on GitHub. Each project compares the model against a simple baseline, because a high score means little without one.</p>
+  <article class="feature rv">
+    <div class="fig tabsfig">
+      <div class="seg" id="irrTabs"><button class="on" data-t="try">Try it</button><button data-t="method">Method</button><button data-t="robust">Sensor faults</button><button data-t="calib">Calibration</button><button data-t="feat">Features</button></div>
+      <div class="tab on" data-t="try">
+        <div class="soilhead"><span class="pill" id="soilPill">Safe for the next 12 h</span><span class="soilnow" id="soilNow"></span></div>
+        <div class="soilwrap"><canvas id="soil" aria-label="Soil moisture over the last 24 hours and projected 12 hours"></canvas><div class="tip" id="soilTip"></div></div>
+        <div class="sliders small">
+          <label>Moisture now <output id="o-vwc"></output><input type="range" id="s-vwc" min="0.15" max="0.34" step="0.005" value="0.24"></label>
+          <label>Drying / hour <output id="o-dry"></output><input type="range" id="s-dry" min="0" max="0.008" step="0.0005" value="0.004"></label>
+          <label>Rain, next 12 h <output id="o-rain"></output><input type="range" id="s-rain" min="0" max="15" step="1" value="0"></label>
+        </div>
+        <p class="vizcap">A straight-line toy, so you can see the question the model answers. The trained model uses 70 features instead.</p>
+      </div>
+      <div class="tab" data-t="method"><img data-src="https://raw.githubusercontent.com/nadim7009/irrigasmart-soil-moisture-risk/main/figures/system_architecture.png" alt="IrrigaSmart methodology diagram"></div>
+      <div class="tab" data-t="robust"><img data-src="https://raw.githubusercontent.com/nadim7009/irrigasmart-soil-moisture-risk/main/figures/robustness_f1_under_corruption.png" alt="Test F1 as more sensor readings are corrupted"></div>
+      <div class="tab" data-t="calib"><img data-src="https://raw.githubusercontent.com/nadim7009/irrigasmart-soil-moisture-risk/main/figures/probability_calibration.png" alt="Probability calibration of the selected model"></div>
+      <div class="tab" data-t="feat"><img data-src="https://raw.githubusercontent.com/nadim7009/irrigasmart-soil-moisture-risk/main/figures/top15_feature_importance.png" alt="Top 15 features by permutation importance"></div>
+    </div>
+    <div class="body">
+      <div class="badges"><span class="badge g">Open source</span><span class="badge n">Personal project</span></div>
+      <h3>IrrigaSmart: predicting soil-moisture risk 12 hours ahead</h3>
+      <p>Will this vegetable field drop below the irrigation threshold in the next 12 hours? I used open sensor, weather and field data from farms in Flanders, Belgium. Most of the work went into the data: removing faulty sensor readings, building a target that only looks forward, and splitting by crop cycle so the test fields never leak into training.</p>
+      <div class="metrics"><div><b>0.977</b>test F1</div><div><b>0.999</b>ROC-AUC</div><div><b>&lt;0.003</b>F1 drop, 30% sensor faults</div></div>
+      <p style="font-size:14px;color:var(--muted)">A simple threshold rule reaches F1 0.972, so the model's gain is in recall: it misses 44 at-risk cases against 81 for the rule.</p>
+      <div class="tags"><span>scikit-learn</span><span>HistGradientBoosting</span><span>Feature engineering</span><span>Time series</span><span>Calibration</span></div>
+      <a class="link" href="https://github.com/nadim7009/irrigasmart-soil-moisture-risk" target="_blank" rel="noopener">View on GitHub →</a>
+    </div>
+  </article>
+  <div class="grid2">
+    <article class="proj rv">
+      <div class="badges"><span class="badge n">Thesis</span><span class="badge g">In progress</span></div>
+      <h3>Mitigating the correlation trap in email marketing with causal uplift modelling</h3>
+      <p>A model that predicts who will buy is not the same as a model that predicts who will buy because of the email. Using the Hillstrom campaign data with injected confounding, I compare predictive models with causal uplift models to measure how often correlation-based targeting picks the wrong customers.</p>
+      <div class="tags"><span>Causal inference</span><span>Uplift modelling</span><span>Python</span></div>
+    </article>
+    <article class="proj rv">
+      <div class="badges"><span class="badge">Paper under review</span></div>
+      <h3>Robust plant disease classification</h3>
+      <p>The code behind paper 01: a leakage-aware PlantVillage split, a nine-condition corruption benchmark, four CNN architectures, a corruption-aware training ablation, Grad-CAM and calibration. Four notebooks, written for Colab and Kaggle GPUs.</p>
+      <div class="tags"><span>PyTorch</span><span>Transfer learning</span><span>Data augmentation</span></div>
+      <p class="muted-link">Repository goes public once the paper is published.</p>
+    </article>
+  </div>
+</section>
+
+<section class="block" id="experience" data-order-r="5" data-order-i="4">
+  <div class="kicker rv">Experience</div>
+  <h2 class="rv">Where I've <em>worked</em></h2>
+  <div class="timeline">
+    <div class="item rv"><div class="when">Jun 2026 to present · Remote</div><h3>Machine Learning Intern</h3><div class="org">FlyRank AI</div></div>
+    <div class="item rv"><div class="when">Oct 2023 to Jan 2026 · Dhaka</div><h3>Media Executive</h3><div class="org">DIU Software Engineering Club</div><p>Handled media and public relations for club events.</p></div>
+    <div class="item rv"><div class="when">Volunteer</div><h3>Event volunteer</h3><div class="org">International Robotics Olympiad · Prothom Alo Math Olympiad · Prothom Alo Bondhushova</div></div>
+  </div>
+</section>
+
+<section class="block" id="skills" data-order-r="6" data-order-i="3">
+  <div class="kicker rv">Skills</div>
+  <h2 class="rv">Tools I <em>use</em></h2>
+  <div class="skills">
+    <div class="skill rv"><h3>Deep learning</h3><div class="tags"><span>PyTorch</span><span>torchvision</span><span>CNNs</span><span>Transfer learning</span><span>ResNet</span><span>EfficientNet</span><span>DenseNet</span><span>U-Net</span><span>Attention U-Net</span></div></div>
+    <div class="skill rv"><h3>Machine learning</h3><div class="tags"><span>scikit-learn</span><span>XGBoost</span><span>Gradient boosting</span><span>Random Forest</span><span>Feature engineering</span><span>Cross-validation</span></div></div>
+    <div class="skill rv"><h3>Computer vision</h3><div class="tags"><span>Image classification</span><span>Semantic segmentation</span><span>Data augmentation</span><span>Corruption benchmarks</span></div></div>
+    <div class="skill rv"><h3>Explainability and evaluation</h3><div class="tags"><span>SHAP</span><span>Grad-CAM</span><span>Permutation importance</span><span>ECE</span><span>Brier score</span><span>Dice / IoU</span><span>Ablation studies</span></div></div>
+    <div class="skill rv"><h3>Causal ML</h3><div class="tags"><span>Uplift modelling</span><span>Causal inference</span><span>Confounding</span></div></div>
+    <div class="skill rv"><h3>Programming and tools</h3><div class="tags"><span>Python</span><span>NumPy</span><span>Pandas</span><span>Matplotlib</span><span>Seaborn</span><span>Jupyter</span><span>Git</span><span>Colab</span><span>Kaggle</span></div></div>
+  </div>
+</section>
+
+<section class="block" id="education" data-order-r="4" data-order-i="6">
+  <div class="kicker rv">Education</div>
+  <h2 class="rv">Education and <em>certificates</em></h2>
+  <div class="edu">
+    <article class="proj rv"><div class="meta">2026 (expected) · Dhaka, Bangladesh</div><h3 style="margin-top:6px">B.Sc. in Software Engineering, major in Data Science</h3><p>Daffodil International University. CGPA 3.73 / 4.00. Thesis on causal uplift modelling.</p></article>
+    <article class="proj rv"><div class="meta">Certificate · Ostad</div><h3 style="margin-top:6px">Data Science and Machine Learning with Python for Beginners</h3><p>Python, data analysis and the core machine learning workflow.</p><a class="link" href="https://ostad.app/share/certificate/c37395-nadim-mahmud" target="_blank" rel="noopener">View certificate →</a></article>
+  </div>
+</section>
+
+<section id="contact" data-order-r="7" data-order-i="7">
+  <div class="contact rv">
+    <div>
+      <div class="kicker" style="color:#e8a585">Contact</div>
+      <h2>Let's <em>talk</em>.</h2>
+      <p>If you supervise research in robust or explainable computer vision, or you are hiring for machine learning roles, I would like to hear from you. Email is the fastest way to reach me.</p>
+      <div class="cta" style="margin-bottom:0">
+        <a class="btn p" href="Nadim_Mahmud_Research_CV.pdf" target="_blank" rel="noopener">Research CV</a>
+        <a class="btn s" href="Nadim_Mahmud_Resume_ML_Engineer.pdf" target="_blank" rel="noopener">Industry resume</a>
+      </div>
+    </div>
+    <div class="clist">
+      <a href="mailto:mahmudnadim479@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>mahmudnadim479@gmail.com</a>
+      <a href="https://www.linkedin.com/in/nadim-mahmud-ml/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.6 8.65 22 11.2 22 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.5-2.25 3.1V21h-4z"/></svg>linkedin.com/in/nadim-mahmud-ml</a>
+      <a href="https://github.com/nadim7009" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6a4.7 4.7 0 011.3-3.2c-.2-.3-.6-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2a4.7 4.7 0 011.3 3.2c0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .5z"/></svg>github.com/nadim7009</a>
+      <a href="https://orcid.org/0009-0002-9274-4850" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 8v9M12.5 8H14a4.5 4.5 0 010 9h-1.5z"/></svg>ORCID 0009-0002-9274-4850</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<div class="wrap"><footer><span>© 2026 Nadim Mahmud</span><a href="#top" style="text-decoration:none">Back to top ↑</a></footer></div>
+
+<img id="photo" alt="" style="display:none" src="photo.jpg">
+<script>
+(function(){
+/* view toggle */
+var CV={research:'Nadim_Mahmud_Research_CV.pdf',industry:'Nadim_Mahmud_Resume_ML_Engineer.pdf'};
+var sections=[].slice.call(document.querySelectorAll('[data-order-r]'));
+function setMode(m,push){
+  document.querySelectorAll('.mode button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m)});
+  var k=m==='industry'?'i':'r';
+  document.querySelectorAll('[data-r]').forEach(function(el){el.innerHTML=el.getAttribute('data-'+k)});
+  document.getElementById('cta2').setAttribute('href',m==='industry'?'#projects':'#research');
+  document.querySelectorAll('.cvlink').forEach(function(a){a.href=CV[m]});
+  sections.forEach(function(s){s.style.order=s.getAttribute('data-order-'+k)});
+  try{localStorage.setItem('view',m)}catch(e){}
+  if(push){var u=new URL(location.href);if(m==='industry')u.searchParams.set('view','industry');else u.searchParams.delete('view');history.replaceState(null,'',u)}
+}
+var q=new URLSearchParams(location.search).get('view'),saved=null;try{saved=localStorage.getItem('view')}catch(e){}
+setMode(q==='industry'||q==='research'?q:(saved||'research'),false);
+document.querySelectorAll('.mode button').forEach(function(b){b.onclick=function(){setMode(b.dataset.m,true)}});
+
+/* header + reveal */
+var hd=document.querySelector('header');addEventListener('scroll',function(){hd.classList.toggle('scrolled',scrollY>10)},{passive:true});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function fit(cv){var r=cv.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);cv.width=Math.max(1,r.width*d);cv.height=Math.max(1,r.height*d);return[cv.width,cv.height]}
+function visible(el){var r=el.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight}
+
+/* hero: robustness lens */
+var img=document.getElementById('photo');
+function cover(ctx,w,h,filter){var s=Math.max(w/img.naturalWidth,h/img.naturalHeight),iw=img.naturalWidth*s,ih=img.naturalHeight*s;ctx.filter=filter||'none';ctx.drawImage(img,(w-iw)/2,(h-ih)/2,iw,ih);ctx.filter='none'}
+function lens(){
+  var cv=document.getElementById('lens'),ctx=cv.getContext('2d'),W=0,H=0,clean,bad,mode='blur',x=.5,tx=.5,last=-9999;
+  function off(){var c=document.createElement('canvas');c.width=W;c.height=H;return c}
+  function build(){var s=fit(cv);W=s[0];H=s[1];clean=off();cover(clean.getContext('2d'),W,H);bad=off();var b=bad.getContext('2d');
+    if(mode==='blur'){cover(b,W,H,'blur('+Math.round(W/60)+'px)');if(b.filter===undefined)cover(b,W,H)}
+    if(mode==='dark')cover(b,W,H,'brightness(.38) contrast(.9)');
+    if(mode==='noise'){cover(b,W,H);var d=b.getImageData(0,0,W,H),p=d.data;for(var i=0;i<p.length;i+=4){var n=(Math.random()+Math.random()+Math.random()-1.5)*95;p[i]+=n;p[i+1]+=n;p[i+2]+=n}b.putImageData(d,0,0)}
+    document.getElementById('lensLabel').textContent={blur:'Severe blur',noise:'Gaussian noise',dark:'Low light'}[mode]}
+  function draw(t){requestAnimationFrame(draw);if(!visible(cv))return;
+    if(!W)build();
+    if(t-last>2500&&!reduce)tx=.5+.3*Math.sin(t/1500);x+=(tx-x)*.08;var sx=x*W,d=W/400;
+    ctx.drawImage(clean,0,0);ctx.save();ctx.beginPath();ctx.rect(0,0,sx,H);ctx.clip();ctx.drawImage(bad,0,0);ctx.restore();
+    ctx.fillStyle='#fffdf8';ctx.fillRect(sx-1.5*d,0,3*d,H);ctx.beginPath();ctx.arc(sx,H*.5,17*d,0,7);ctx.fill();
+    ctx.strokeStyle='#17202e';ctx.lineWidth=2*d;ctx.beginPath();ctx.moveTo(sx-4*d,H*.5-5*d);ctx.lineTo(sx-9*d,H*.5);ctx.lineTo(sx-4*d,H*.5+5*d);ctx.moveTo(sx+4*d,H*.5-5*d);ctx.lineTo(sx+9*d,H*.5);ctx.lineTo(sx+4*d,H*.5+5*d);ctx.stroke()}
+  function mv(cx){var r=cv.getBoundingClientRect();tx=Math.min(.98,Math.max(.02,(cx-r.left)/r.width));last=performance.now()}
+  cv.addEventListener('pointermove',function(e){mv(e.clientX)});
+  cv.addEventListener('touchmove',function(e){mv(e.touches[0].clientX)},{passive:true});
+  document.querySelectorAll('#lensCtrl button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#lensCtrl button').forEach(function(z){z.classList.toggle('on',z===b)});mode=b.dataset.k;build()}});
+  var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(build,150)});
+  requestAnimationFrame(draw);
+}
+if(img.complete&&img.naturalWidth)lens();else img.addEventListener('load',lens);
+
+/* research: leaf with attention map */
+(function(){
+  var cv=document.getElementById('leaf'),ctx=cv.getContext('2d'),W=0,H=0,base,px=.5,py=.5,tx=.5,ty=.5,last=-9999,spot=0;
+  var spots=[[.42,.38,.07],[.58,.55,.09],[.45,.68,.06],[.62,.33,.05]];
+  function leafPath(c,w,h){c.beginPath();c.moveTo(w*.5,h*.08);c.bezierCurveTo(w*.92,h*.22,w*.9,h*.7,w*.5,h*.9);c.bezierCurveTo(w*.1,h*.7,w*.08,h*.22,w*.5,h*.08);c.closePath()}
+  function build(){var s=fit(cv);W=s[0];H=s[1];base=document.createElement('canvas');base.width=W;base.height=H;var c=base.getContext('2d');
+    c.fillStyle='#f3efe6';c.fillRect(0,0,W,H);
+    c.save();c.translate(W/2,H/2);c.rotate(-.35);c.scale(.84,.84);c.translate(-W/2,-H/2);
+    leafPath(c,W,H);var g=c.createLinearGradient(0,0,W,H);g.addColorStop(0,'#5c9a52');g.addColorStop(1,'#2f6b3a');c.fillStyle=g;c.fill();c.save();c.clip();
+    c.strokeStyle='rgba(225,240,210,.55)';c.lineWidth=W/170;c.beginPath();c.moveTo(W*.5,H*.1);c.quadraticCurveTo(W*.52,H*.5,W*.5,H*.95);c.stroke();
+    for(var i=1;i<8;i++){var y=H*(.15+i*.095);c.beginPath();c.moveTo(W*.505,y);c.quadraticCurveTo(W*.68,y-H*.02,W*.82,y-H*.09);c.moveTo(W*.5,y);c.quadraticCurveTo(W*.32,y-H*.02,W*.18,y-H*.09);c.lineWidth=W/300;c.stroke()}
+    spots.forEach(function(s){var r=s[2]*W,gg=c.createRadialGradient(s[0]*W,s[1]*H,0,s[0]*W,s[1]*H,r);gg.addColorStop(0,'#5a3a1a');gg.addColorStop(.6,'#8a6a2a');gg.addColorStop(1,'rgba(170,160,60,0)');c.fillStyle=gg;c.beginPath();c.arc(s[0]*W,s[1]*H,r,0,7);c.fill()});
+    c.restore();c.restore()}
+  function rot(x,y){var a=-.35,cx=x-.5,cy=y-.5;return[.5+.84*(cx*Math.cos(a)-cy*Math.sin(a)),.5+.84*(cx*Math.sin(a)+cy*Math.cos(a))]}
+  var label=document.getElementById('leafLabel'),hold=0;
+  function draw(t){requestAnimationFrame(draw);if(!visible(cv))return;if(!W)build();
+    if(t-last>2500&&!reduce&&t>hold){spot=(spot+1)%(spots.length+1);var p=spot<spots.length?rot(spots[spot][0],spots[spot][1]):[.85,.15];tx=p[0];ty=p[1];hold=t+1600}
+    px+=(tx-px)*.05;py+=(ty-py)*.05;
+    ctx.drawImage(base,0,0);
+    var R=Math.min(W,H)*.3,g=ctx.createRadialGradient(px*W,py*H,0,px*W,py*H,R);
+    g.addColorStop(0,'rgba(225,45,30,.62)');g.addColorStop(.35,'rgba(250,200,40,.42)');g.addColorStop(.7,'rgba(40,180,160,.18)');g.addColorStop(1,'rgba(30,60,170,0)');
+    ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+    var near=spots.some(function(s){var p=rot(s[0],s[1]);return Math.hypot(p[0]-px,p[1]-py)<.08});
+    label.textContent=near?'looking at: lesion':'looking at: background';label.style.color=near?'#1f5f4a':'#c8562d'}
+  cv.addEventListener('pointermove',function(e){var r=cv.getBoundingClientRect();tx=(e.clientX-r.left)/r.width;ty=(e.clientY-r.top)/r.height;last=performance.now()});
+  var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(build,150)});
+  requestAnimationFrame(draw);
+})();
+})();
+/* ---------- paper and project visuals ---------- */
+(function(){
+var DPR=Math.min(window.devicePixelRatio||1,2);
+function fitC(cv){var r=cv.getBoundingClientRect();cv.width=Math.max(1,Math.round(r.width*DPR));cv.height=Math.max(1,Math.round(r.height*DPR));return [cv.width,cv.height]}
+function whenSeen(el,fn){var o=new IntersectionObserver(function(es){if(es[0].isIntersecting){o.disconnect();fn()}},{rootMargin:'200px'});o.observe(el)}
+function gauss(){return Math.random()+Math.random()+Math.random()-1.5}
+function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+
+/* 01: nine corruption conditions on a drawn leaf */
+function leaf(c,S){
+  c.fillStyle='#f3efe6';c.fillRect(0,0,S,S);
+  c.save();c.translate(S/2,S/2);c.rotate(-.5);c.scale(.82,.82);c.translate(-S/2,-S/2);
+  c.beginPath();c.moveTo(S*.5,S*.06);c.bezierCurveTo(S*.95,S*.22,S*.92,S*.72,S*.5,S*.94);c.bezierCurveTo(S*.08,S*.72,S*.05,S*.22,S*.5,S*.06);c.closePath();
+  var g=c.createLinearGradient(0,0,S,S);g.addColorStop(0,'#62a256');g.addColorStop(1,'#2d6838');c.fillStyle=g;c.fill();c.save();c.clip();
+  c.strokeStyle='rgba(225,240,210,.6)';c.lineWidth=S/90;c.beginPath();c.moveTo(S*.5,S*.08);c.lineTo(S*.5,S*.95);c.stroke();c.lineWidth=S/160;
+  for(var i=1;i<8;i++){var y=S*(.12+i*.1);c.beginPath();c.moveTo(S*.5,y);c.quadraticCurveTo(S*.7,y-S*.03,S*.86,y-S*.11);c.moveTo(S*.5,y);c.quadraticCurveTo(S*.3,y-S*.03,S*.14,y-S*.11);c.stroke()}
+  [[.38,.36,.08],[.6,.55,.1],[.43,.7,.065],[.63,.3,.055]].forEach(function(s){var r=s[2]*S,gg=c.createRadialGradient(s[0]*S,s[1]*S,0,s[0]*S,s[1]*S,r);gg.addColorStop(0,'#55361a');gg.addColorStop(.6,'#8a6a2a');gg.addColorStop(1,'rgba(170,160,60,0)');c.fillStyle=gg;c.beginPath();c.arc(s[0]*S,s[1]*S,r,0,7);c.fill()});
+  c.restore();c.restore();
+}
+var g9=document.querySelectorAll('.g9c');
+function drawG9(){
+  var base=document.createElement('canvas');
+  g9.forEach(function(cv){
+    var S=fitC(cv)[0];cv.height=S;base.width=base.height=S;leaf(base.getContext('2d'),S);
+    var c=cv.getContext('2d'),k=cv.dataset.k,s=+cv.dataset.s;
+    if(k==='blur'){c.filter='blur('+([1,2,3][s]*S/224*1.6)+'px)';c.drawImage(base,0,0);c.filter='none'}
+    else if(k==='dark'){c.filter='brightness('+[.8,.6,.4][s]+')';c.drawImage(base,0,0);c.filter='none'}
+    else{c.drawImage(base,0,0);var d=c.getImageData(0,0,S,S),p=d.data,sd=[.03,.07,.12][s]*255*1.7;for(var i=0;i<p.length;i+=4){var n=gauss()*sd;p[i]+=n;p[i+1]+=n;p[i+2]+=n}c.putImageData(d,0,0)}
+  });
+}
+if(g9.length)whenSeen(g9[0],drawG9);
+
+/* 02: SEM-style microplastics */
+var sem=document.getElementById('sem');
+if(sem){
+  var view='img',seed=7,IMG,MASK,ATT,SW;
+  function blob(c,r,cx,cy,R,n,j){c.beginPath();for(var i=0;i<=n;i++){var a=i/n*Math.PI*2,rr=R*(1-j/2+r()*j);var x=cx+Math.cos(a)*rr,y=cy+Math.sin(a)*rr*(.7+r()*.3);i?c.lineTo(x,y):c.moveTo(x,y)}c.closePath()}
+  function shapes(r,S){var list=[],n=7+Math.floor(r()*4);for(var i=0;i<n;i++){var t=r(),cx=S*(.12+r()*.76),cy=S*(.12+r()*.76);
+    if(t<.5)list.push({t:'frag',cx:cx,cy:cy,R:S*(.05+r()*.07),n:7+Math.floor(r()*6),s:Math.floor(r()*1e6)});
+    else if(t<.75)list.push({t:'fiber',x:cx,y:cy,a:r()*Math.PI,L:S*(.25+r()*.25),w:S*(.012+r()*.012),b:(r()-.5)*S*.2});
+    else list.push({t:'bead',cx:cx,cy:cy,R:S*(.025+r()*.035)})}return list}
+  function path(c,sh){if(sh.t==='frag'){blob(c,rng(sh.s),sh.cx,sh.cy,sh.R,sh.n,.55)}else if(sh.t==='bead'){c.beginPath();c.arc(sh.cx,sh.cy,sh.R,0,7)}}
+  function fiber(c,sh,style,w){var dx=Math.cos(sh.a)*sh.L/2,dy=Math.sin(sh.a)*sh.L/2;c.beginPath();c.moveTo(sh.x-dx,sh.y-dy);c.quadraticCurveTo(sh.x+sh.b,sh.y-sh.b,sh.x+dx,sh.y+dy);c.lineCap='round';c.strokeStyle=style;c.lineWidth=w;c.stroke()}
+  function buildSem(){
+    var S=fitC(sem)[0];sem.height=S;SW=S;var r=rng(seed),list=shapes(r,S);
+    IMG=document.createElement('canvas');MASK=document.createElement('canvas');ATT=document.createElement('canvas');[IMG,MASK,ATT].forEach(function(x){x.width=x.height=S});
+    var c=IMG.getContext('2d'),g=c.createRadialGradient(S*.4,S*.35,S*.1,S*.5,S*.5,S*.8);g.addColorStop(0,'#6f6f6f');g.addColorStop(1,'#3a3a3a');c.fillStyle=g;c.fillRect(0,0,S,S);
+    for(var i=0;i<60;i++){c.fillStyle='rgba(0,0,0,'+(.08+r()*.12)+')';c.beginPath();c.arc(r()*S,r()*S,S*(.004+r()*.012),0,7);c.fill()}
+    list.forEach(function(sh){
+      if(sh.t==='fiber'){fiber(c,sh,'rgba(0,0,0,.35)',sh.w*1.8);fiber(c,sh,'#a9a9a9',sh.w);fiber(c,sh,'rgba(255,255,255,.55)',sh.w*.35);return}
+      c.save();c.shadowColor='rgba(0,0,0,.5)';c.shadowBlur=S*.02;c.shadowOffsetY=S*.006;path(c,sh);var gg=c.createRadialGradient((sh.cx-sh.R*.3),(sh.cy-sh.R*.3),0,sh.cx,sh.cy,sh.R*1.2);gg.addColorStop(0,'#c9c9c9');gg.addColorStop(1,'#8c8c8c');c.fillStyle=gg;c.fill();c.restore();
+      path(c,sh);c.strokeStyle='rgba(255,255,255,.75)';c.lineWidth=S*.006;c.stroke()});
+    var d=c.getImageData(0,0,S,S),p=d.data;for(var k=0;k<p.length;k+=4){var n=gauss()*22;p[k]+=n;p[k+1]+=n;p[k+2]+=n}c.putImageData(d,0,0);
+    var m=MASK.getContext('2d');m.fillStyle='#000';m.fillRect(0,0,S,S);list.forEach(function(sh){if(sh.t==='fiber')fiber(m,sh,'#fff',sh.w);else{path(m,sh);m.fillStyle='#fff';m.fill()}});
+    var a=ATT.getContext('2d');a.filter='blur('+Math.round(S*.035)+'px)';a.drawImage(MASK,0,0);a.filter='none';
+    var ad=a.getImageData(0,0,S,S),q=ad.data;for(var z=0;z<q.length;z+=4){var v=q[z]/255,rr,gg2,bb;
+      if(v<.33){rr=30;gg2=60+v*3*120;bb=170}else if(v<.66){var u=(v-.33)*3;rr=30+u*220;gg2=180+u*20;bb=170-u*130}else{var w=(v-.66)*3;rr=250-w*25;gg2=200-w*160;bb=40-w*10}
+      q[z]=rr;q[z+1]=gg2;q[z+2]=bb;q[z+3]=60+v*140}a.putImageData(ad,0,0);
+    drawSem();
+  }
+  function drawSem(){var c=sem.getContext('2d'),S=SW;c.clearRect(0,0,S,S);
+    if(view==='mask'){c.drawImage(MASK,0,0)}
+    else{c.drawImage(IMG,0,0)}
+    if(view==='overlay'){var t=document.createElement('canvas');t.width=t.height=S;var x=t.getContext('2d');x.drawImage(MASK,0,0);x.globalCompositeOperation='multiply';x.fillStyle='#2f8f6c';x.fillRect(0,0,S,S);c.globalCompositeOperation='screen';c.globalAlpha=.9;c.drawImage(t,0,0);c.globalAlpha=1;c.globalCompositeOperation='source-over'}
+    if(view==='att'){c.fillStyle='rgba(0,0,0,.35)';c.fillRect(0,0,S,S);c.drawImage(ATT,0,0)}
+    document.getElementById('semLabel').textContent={img:'SEM image',mask:'Ground-truth mask',overlay:'Segmentation overlay',att:'Attention gate focus'}[view]}
+  document.querySelectorAll('#semCtrl button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#semCtrl button').forEach(function(z){z.classList.toggle('on',z===b)});view=b.dataset.v;drawSem()}});
+  document.getElementById('semNew').onclick=function(){seed=Math.floor(Math.random()*1e6);buildSem()};
+  whenSeen(sem,buildSem);
+}
+
+/* 03: carbon footprint, SHAP-style contributions */
+var CF=[
+  {k:'car',lab:'Car travel',unit:'km/week',min:0,max:400,step:10,avg:100,f:52*0.17},
+  {k:'fly',lab:'Flights',unit:'flights a year',min:0,max:10,step:1,avg:1,f:250},
+  {k:'meat',lab:'Meat meals',unit:'per week',min:0,max:21,step:1,avg:7,f:52*1.5},
+  {k:'elec',lab:'Electricity',unit:'kWh/month',min:30,max:500,step:10,avg:150,f:12*0.5},
+  {k:'shop',lab:'Online orders',unit:'per month',min:0,max:30,step:1,avg:4,f:12*1.0},
+  {k:'ai',lab:'AI chats',unit:'per day',min:0,max:100,step:5,avg:10,f:365*0.004}];
+var cs=document.getElementById('cSliders');
+if(cs){
+  var BASE=1500,vals={};
+  var START={car:220,fly:3,meat:4,elec:120,shop:12,ai:40};
+  CF.forEach(function(x){x.v0=START[x.k];vals[x.k]=x.v0;var l=document.createElement('label');l.innerHTML=x.lab+' <output></output><input type="range" min="'+x.min+'" max="'+x.max+'" step="'+x.step+'" value="'+x.v0+'" aria-label="'+x.lab+'">';cs.appendChild(l);
+    var inp=l.querySelector('input'),out=l.querySelector('output');out.textContent=x.v0+' '+x.unit;inp.oninput=function(){vals[x.k]=+inp.value;out.textContent=inp.value+' '+x.unit;drawC()}});
+  var avgTot=BASE+CF.reduce(function(s,x){return s+x.avg*x.f},0);
+  document.getElementById('cAvg').textContent='t CO₂e a year. Average person here: '+(avgTot/1000).toFixed(1)+' t';
+  var bars=document.getElementById('cBars');
+  function drawC(){
+    var tot=BASE+CF.reduce(function(s,x){return s+vals[x.k]*x.f},0);
+    document.getElementById('cTotal').textContent=(tot/1000).toFixed(1);
+    var rows=CF.map(function(x){return {x:x,d:(vals[x.k]-x.avg)*x.f}}).sort(function(a,b){return Math.abs(b.d)-Math.abs(a.d)});
+    var M=Math.max(400,Math.max.apply(null,rows.map(function(r){return Math.abs(r.d)})));
+    bars.innerHTML='';
+    rows.forEach(function(r){var w=Math.abs(r.d)/M*50,el=document.createElement('div');el.className='crow';
+      var col=r.d>=0?'#c8562d':'#2f8f6c',left=r.d>=0?50:50-w;
+      var txt=(r.d>=0?'+':'−')+Math.round(Math.abs(r.d))+' kg';
+      el.innerHTML='<span class="lab">'+r.x.lab+'</span><span class="ctrack" title="'+r.x.lab+': '+txt+' compared with average"><span class="cbar" style="left:'+left+'%;width:'+w+'%;background:'+col+'"></span></span><span class="val">'+txt+'</span>';
+      bars.appendChild(el)});
+  }
+  drawC();
+}
+
+/* IrrigaSmart: tabs + soil moisture toy */
+var tabs=document.querySelectorAll('#irrTabs button');
+tabs.forEach(function(b){b.onclick=function(){tabs.forEach(function(z){z.classList.toggle('on',z===b)});
+  document.querySelectorAll('.tabsfig .tab').forEach(function(t){var on=t.dataset.t===b.dataset.t;t.classList.toggle('on',on);var im=t.querySelector('img[data-src]');if(on&&im){im.src=im.dataset.src;im.removeAttribute('data-src')}});
+  if(b.dataset.t==='try')drawSoil()}});
+var soil=document.getElementById('soil');
+if(soil){
+  var sv=document.getElementById('s-vwc'),sd=document.getElementById('s-dry'),sr=document.getElementById('s-rain'),TH=0.18,pts=[],hover=null;
+  function series(){var v=+sv.value,dr=+sd.value,rain=+sr.value,out=[];
+    for(var t=-24;t<=12;t+=0.5){var y;
+      if(t<=0){y=Math.min(0.36,v+dr*(-t))+0.004*Math.sin((t+6)/24*Math.PI*2)-0.004*Math.sin(6/24*Math.PI*2)}
+      else{y=v-dr*t+0.0045*rain*(1/(1+Math.exp(-(t-4)*1.6)))}
+      out.push({t:t,y:Math.max(0.05,Math.min(0.45,y))})}return out}
+  function drawSoil(){
+    if(!soil.offsetWidth)return;var s=fitC(soil),W=s[0],H=s[1],c=soil.getContext('2d'),d=DPR;
+    document.getElementById('o-vwc').textContent=(+sv.value).toFixed(3);
+    document.getElementById('o-dry').textContent=(+sd.value).toFixed(4);
+    document.getElementById('o-rain').textContent=sr.value+' mm';
+    pts=series();var L=40*d,R=10*d,T=10*d,B=24*d,y0=0.08,y1=0.42;
+    var X=function(t){return L+(t+24)/36*(W-L-R)},Y=function(v){return T+(y1-v)/(y1-y0)*(H-T-B)};
+    c.clearRect(0,0,W,H);c.font=(11*d)+'px Inter';c.textBaseline='middle';
+    c.fillStyle='rgba(31,95,74,.06)';c.fillRect(X(0),T,X(12)-X(0),H-T-B);
+    c.strokeStyle='#ebe6dc';c.lineWidth=1*d;c.fillStyle='#8a919c';c.textAlign='right';
+    [0.1,0.2,0.3,0.4].forEach(function(v){c.beginPath();c.moveTo(L,Y(v));c.lineTo(W-R,Y(v));c.stroke();c.fillText(v.toFixed(1),L-6*d,Y(v))});
+    c.textAlign='center';c.textBaseline='top';[-24,-12,0,6,12].forEach(function(t){c.textAlign=t===12?'right':(t===-24?'left':'center');c.fillText(t===0?'now':(t>0?'+':'')+t+' h',X(t),H-B+7*d)});
+    c.setLineDash([5*d,4*d]);c.strokeStyle='#c8562d';c.lineWidth=1.5*d;c.beginPath();c.moveTo(L,Y(TH));c.lineTo(W-R,Y(TH));c.stroke();c.setLineDash([]);
+    c.fillStyle='#a8431f';c.textAlign='left';c.textBaseline='bottom';c.fillText('irrigation threshold 0.18',L+6*d,Y(TH)-4*d);
+    c.strokeStyle='#b9b3a6';c.lineWidth=1*d;c.beginPath();c.moveTo(X(0),T);c.lineTo(X(0),H-B);c.stroke();
+    c.lineJoin='round';c.lineWidth=2*d;c.strokeStyle='#17202e';c.beginPath();pts.forEach(function(p,i){if(p.t>0)return;i?c.lineTo(X(p.t),Y(p.y)):c.moveTo(X(p.t),Y(p.y))});c.stroke();
+    c.setLineDash([2*d,4*d]);c.strokeStyle='#1f5f4a';c.beginPath();pts.forEach(function(p){if(p.t<0)return;p.t===0?c.moveTo(X(p.t),Y(p.y)):c.lineTo(X(p.t),Y(p.y))});c.stroke();c.setLineDash([]);
+    var cross=null;pts.forEach(function(p){if(p.t>0&&cross===null&&p.y<TH)cross=p.t});
+    var pill=document.getElementById('soilPill');
+    if(cross!==null){pill.className='pill risk';pill.textContent='⚠ At risk in about '+Math.ceil(cross)+' h';c.fillStyle='#c8562d';c.beginPath();c.arc(X(cross),Y(TH),5*d,0,7);c.fill()}
+    else{pill.className='pill ok';pill.textContent='✓ Safe for the next 12 h'}
+    document.getElementById('soilNow').textContent='Past 24 h measured · next 12 h projected';
+    c.fillStyle='#17202e';c.beginPath();c.arc(X(0),Y(pts[48].y),5*d,0,7);c.fill();c.strokeStyle='#fffdf8';c.lineWidth=2*d;c.stroke();
+    if(hover){var hp=pts.reduce(function(a,b){return Math.abs(b.t-hover)<Math.abs(a.t-hover)?b:a});
+      c.strokeStyle='rgba(23,32,46,.35)';c.lineWidth=1*d;c.beginPath();c.moveTo(X(hp.t),T);c.lineTo(X(hp.t),H-B);c.stroke();
+      c.fillStyle='#17202e';c.beginPath();c.arc(X(hp.t),Y(hp.y),4.5*d,0,7);c.fill();
+      var tip=document.getElementById('soilTip');tip.style.left=(X(hp.t)/d)+'px';tip.style.top=(Y(hp.y)/d)+'px';tip.style.opacity=1;
+      tip.textContent=(hp.t===0?'now':(hp.t>0?'+':'')+hp.t+' h')+' · '+hp.y.toFixed(3)+(hp.t>0?' (projected)':'')}
+    else document.getElementById('soilTip').style.opacity=0;
+    soil._X=X;soil._L=L;soil._W=W;soil._R=R;
+  }
+  [sv,sd,sr].forEach(function(i){i.oninput=drawSoil});
+  soil.addEventListener('pointermove',function(e){var r=soil.getBoundingClientRect(),x=(e.clientX-r.left)*DPR;var t=(x-soil._L)/(soil._W-soil._L-soil._R)*36-24;hover=Math.max(-24,Math.min(12,Math.round(t*2)/2));drawSoil()});
+  soil.addEventListener('pointerleave',function(){hover=null;drawSoil()});
+  whenSeen(soil,drawSoil);
+}
+var rt2;addEventListener('resize',function(){clearTimeout(rt2);rt2=setTimeout(function(){if(g9.length)drawG9();if(sem&&SW)buildSem();if(soil)drawSoil()},200)});
+})();
+</script>
+</body>
+</html>
