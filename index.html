@@ -191,6 +191,73 @@ footer{padding:10px 0 40px;font-size:13px;color:var(--muted);display:flex;justif
 .soilnow{font-size:12px;color:var(--muted)}
 .soilwrap{position:relative;height:250px}
 .tip{position:absolute;pointer-events:none;background:var(--ink);color:#fff;font-size:12px;padding:6px 9px;border-radius:8px;white-space:nowrap;opacity:0;transition:opacity .15s;transform:translate(-50%,-120%)}
+/* round 3: fewer words, more to look at */
+.big{font-size:19px;line-height:1.55;color:#333c4a;max-width:620px;margin-bottom:22px}
+.ic{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:var(--accent-soft);color:var(--accent);flex-shrink:0}
+.ic svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.quad{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.qtile{display:flex;flex-direction:column;gap:8px;padding:16px;border-radius:16px;background:var(--paper);border:1px solid var(--line);text-decoration:none;transition:transform .25s,box-shadow .25s,border-color .25s}
+.qtile:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 18px 30px -22px rgba(31,95,74,.6)}
+.qtile b{font:600 16px Fraunces,serif}
+.qtile small{font-size:13px;color:var(--muted)}
+.icards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.icard{display:grid;grid-template-columns:40px 1fr;gap:4px 14px;align-items:start;padding:16px;border-radius:16px;background:var(--paper);border:1px solid var(--line);transition:border-color .25s,transform .25s}
+.icard:hover{border-color:var(--accent);transform:translateY(-2px)}
+.icard .ic{grid-row:span 2}
+.icard b{font-weight:600;font-size:15px}
+.icard p{font-size:14px;color:var(--muted);margin:0}
+.icard:last-child{grid-column:1/-1}
+.side{position:sticky;top:96px;align-self:start;display:grid;gap:16px}
+.now{background:var(--ink);color:#e9e6de;border-radius:var(--r);padding:22px 24px}
+.nowtitle{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#8fd1b4;margin-bottom:12px}
+.nowtitle i{width:8px;height:8px;border-radius:50%;background:#8fd1b4;animation:pulse 2.2s infinite}
+.now ul{list-style:none;display:grid;gap:10px}
+.now li{font-size:14px;color:#b9c0cb;padding-left:16px;position:relative}
+.now li:before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:2px;background:#5c6675}
+.now b{color:#fff;font-weight:600}
+.q{font:500 18px/1.45 Fraunces,serif;color:var(--ink);margin:6px 0 4px;padding-left:14px;border-left:3px solid var(--warm)}
+details{margin-top:8px}
+summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--accent);list-style:none;display:inline-flex;align-items:center;gap:6px}
+summary::-webkit-details-marker{display:none}
+summary:before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;border:1.5px solid var(--accent);font-size:13px;line-height:1;transition:transform .2s}
+details[open] summary:before{content:"\2212"}
+details p{margin-top:8px}
+.pipe{list-style:none;counter-reset:p;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:14px 0 4px}
+.pipe li{counter-increment:p;position:relative;font-size:12px;line-height:1.35;padding:28px 8px 10px;border-radius:10px;background:var(--bg);color:var(--ink);font-weight:500}
+.pipe li:before{content:counter(p);position:absolute;top:8px;left:8px;width:16px;height:16px;border-radius:50%;background:var(--accent);color:#fff;font-size:10px;display:flex;align-items:center;justify-content:center}
+.steps{list-style:none;counter-reset:s;display:grid;gap:8px;margin:14px 0 4px}
+.steps li{counter-increment:s;display:flex;gap:10px;align-items:center;font-size:14px;color:#3b4453}
+.steps li:before{content:counter(s);flex-shrink:0;width:24px;height:24px;border-radius:8px;background:var(--warm-soft);color:var(--warm);font-weight:600;font-size:12px;display:flex;align-items:center;justify-content:center}
+.uplift{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 8px}
+.uplift button{text-align:left;font:inherit;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);cursor:pointer;transition:all .2s}
+.uplift button b{display:block;font-size:14px;font-weight:600;color:var(--ink)}
+.uplift button small{font-size:12px;color:var(--muted)}
+.uplift button.on{background:var(--accent);border-color:var(--accent)}
+.uplift button.on b,.uplift button.on small{color:#fff}
+.upnote{font-size:14px;color:var(--ink);background:var(--accent-soft);padding:10px 12px;border-radius:10px;min-height:44px}
+.edupath{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ecard{display:grid;grid-template-columns:92px 1fr;gap:18px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:transform .25s,box-shadow .25s}
+.ecard:hover{transform:translateY(-3px);box-shadow:0 24px 40px -30px rgba(23,32,46,.5)}
+.ecard .meta{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--warm)}
+.ecard h3{font-size:18px;margin:4px 0}
+.ecard p{font-size:14px;color:var(--muted)}
+.ring{--p:0;width:92px;height:92px;border-radius:50%;background:conic-gradient(var(--accent) calc(var(--p)*1%),#e8e3d8 0);display:flex;align-items:center;justify-content:center;position:relative}
+.ring:before{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--paper)}
+.ring span{position:relative;font:600 20px/1 Fraunces,serif;text-align:center}
+.ring small{display:block;font:500 11px Inter;color:var(--muted);margin-top:3px}
+.ring.cert{background:var(--warm-soft);color:var(--warm)}
+.ring.cert:before{display:none}
+.ring.cert svg{position:relative;width:38px;height:38px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}
+.xp{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.xpleft{position:sticky;top:96px}
+.xstats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:8px 0 18px}
+.xstats div{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px;font-size:12px;color:var(--muted)}
+.xstats b{display:block;font:600 24px Fraunces,serif;color:var(--ink)}
+.xnote{font-size:15px;color:var(--muted);max-width:380px}
+.timeline .item{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:14px}
+.timeline .item:before{left:-31px;top:20px}
+@media (max-width:960px){.xp{grid-template-columns:1fr;gap:20px}.xpleft{position:static}.quad{grid-template-columns:1fr 1fr}.side{position:static}.edupath{grid-template-columns:1fr}}
+@media (max-width:600px){.icards{grid-template-columns:1fr}.pipe{grid-template-columns:1fr 1fr}.ecard{grid-template-columns:76px 1fr;padding:18px}.ring{width:76px;height:76px}.ring span{font-size:17px}}
 @media (max-width:960px){
   .hero{grid-template-columns:1fr;gap:50px;padding-top:24px;min-height:0}
   .stage{max-width:440px;margin:0 auto}
@@ -235,7 +302,7 @@ footer{padding:10px 0 40px;font-size:13px;color:var(--muted);display:flex;justif
     <h1 data-r="Models that still work when the data gets &lt;em&gt;messy&lt;/em&gt;." data-i="I build ML models and test them &lt;em&gt;before&lt;/em&gt; they ship.">Models that still work when the data gets <em>messy</em>.</h1>
     <p class="lede" data-r="I'm &lt;strong&gt;Nadim Mahmud&lt;/strong&gt;, a machine learning researcher from Bangladesh. I study how deep learning models hold up under blur, noise and bad lighting, and how to explain what they see, with a focus on agriculture and the environment." data-i="I'm &lt;strong&gt;Nadim Mahmud&lt;/strong&gt;, a machine learning engineer working in Python with PyTorch and scikit-learn. I build image classification, segmentation and tabular models, and I check them with leakage-safe splits, stress tests and clear explanations.">I'm <strong>Nadim Mahmud</strong>, a machine learning researcher from Bangladesh. I study how deep learning models hold up under blur, noise and bad lighting, and how to explain what they see, with a focus on agriculture and the environment.</p>
     <div class="cta">
-      <a class="btn p cvlink" href="Nadim_Mahmud_Research_CV.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg><span data-r="Research CV" data-i="Resume">Research CV</span></a>
+      <a class="btn p cvlink" href="research-cv.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg><span data-r="Research CV" data-i="Resume">Research CV</span></a>
       <a class="btn s" href="#research" data-r="See my research" data-i="See my projects" id="cta2">See my research</a>
     </div>
     <div class="facts">
@@ -258,28 +325,41 @@ footer{padding:10px 0 40px;font-size:13px;color:var(--muted);display:flex;justif
 <section class="block" id="about" data-order-r="1" data-order-i="1">
   <div class="kicker rv">About</div>
   <div class="about">
-    <div class="rv">
-      <h2>One question keeps coming back in my <em>work</em>.</h2>
-      <p>Does a model that scores well on a clean benchmark still work on real data? I have asked it about plant disease photos, microscope images of microplastics, carbon-footprint survey data and soil sensors on farms. The answer is often "less than you'd think", and finding out why is the part I enjoy most.</p>
-      <p>I'm in the final semester of a B.Sc. in Software Engineering at Daffodil International University in Dhaka, with a major in data science. I work as a machine learning intern at FlyRank AI and I'm writing my thesis on causal uplift modelling.</p>
-      <p>Next, I want to do an MSc abroad on reliable and explainable computer vision, ideally for agriculture or environmental monitoring. I'm also open to machine learning engineer roles.</p>
-      <h3 style="margin:28px 0 12px">What I want to work on in my MSc</h3>
-      <ul class="interests">
-        <li>How image models behave under distribution shift and corruption such as blur, noise and low light, and training methods that close the gap.</li>
-        <li>Explainable and trustworthy AI with Grad-CAM, SHAP and calibration, to check what a model looks at and whether its confidence holds up.</li>
-        <li>Pixel-level segmentation of microscopy and environmental images with attention-based U-Nets.</li>
-        <li>Machine learning for agriculture and the environment: plant disease screening, soil-moisture forecasting, microplastic analysis and carbon-footprint modelling.</li>
-        <li>Causal machine learning, especially uplift modelling, to separate what a model predicts from what an action causes.</li>
-      </ul>
+    <div>
+      <h2 class="rv">One question keeps coming back in my <em>work</em>.</h2>
+      <p class="big rv">Does a model that scores well on a clean benchmark still work on real data? I keep asking it in four very different places.</p>
+      <div class="quad rv">
+        <a href="#research" class="qtile"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 19c8 0 14-6 14-14C11 5 5 11 5 19zm0 0l7-7"/></svg></span><b>Plant photos</b><small>Blur, noise and bad light</small></a>
+        <a href="#research" class="qtile"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M16 16l4 4M9 10h.01M12 12h.01M11 8h.01"/></svg></span><b>Microscope images</b><small>Tiny plastic particles</small></a>
+        <a href="#research" class="qtile"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><b>Survey data</b><small>Carbon footprint habits</small></a>
+        <a href="#projects" class="qtile"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3s6 7 6 11a6 6 0 01-12 0c0-4 6-11 6-11z"/></svg></span><b>Farm sensors</b><small>Soil moisture</small></a>
+      </div>
+      <h3 class="rv" style="margin:34px 0 14px">What I want to work on in my MSc</h3>
+      <div class="icards">
+        <div class="icard rv"><span class="ic"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><b>Robust computer vision</b><p>Image models that hold up under blur, noise, low light and other shifts.</p></div>
+        <div class="icard rv"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span><b>Explainable AI</b><p>Grad-CAM, SHAP and calibration: what the model looks at, and can we trust it.</p></div>
+        <div class="icard rv"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 13h7v7h-7z"/><path d="M13 4h7v7M4 13v7h7"/></svg></span><b>Segmentation for science</b><p>Pixel-level masks for microscopy and environmental images.</p></div>
+        <div class="icard rv"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 22V12M12 12C12 7 8 4 3 4c0 5 4 8 9 8zm0 0c0-5 4-8 9-8 0 5-4 8-9 8z"/></svg></span><b>AI for agriculture and climate</b><p>Crop disease, irrigation, pollution and carbon footprints.</p></div>
+        <div class="icard rv"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><b>Causal ML</b><p>Separating what a model predicts from what an action causes.</p></div>
+      </div>
     </div>
-    <div class="facts-list rv">
-      <div><span>Based in</span><b>Dhaka, Bangladesh</b></div>
-      <div><span>Degree</span><b>B.Sc. Software Engineering<br>Data Science major, 2026</b></div>
-      <div><span>CGPA</span><b>3.73 / 4.00</b></div>
-      <div><span>Now</span><b>ML Intern, FlyRank AI</b></div>
-      <div><span>Looking for</span><b>MSc place and scholarship<br>ML engineer roles</b></div>
-      <div><span>ORCID</span><b><a href="https://orcid.org/0009-0002-9274-4850" target="_blank" rel="noopener">0009-0002-9274-4850</a></b></div>
-    </div>
+    <aside class="side">
+      <div class="facts-list rv">
+        <div><span>Based in</span><b>Dhaka, Bangladesh</b></div>
+        <div><span>Degree</span><b>B.Sc. Software Engineering<br>Data Science major, 2026</b></div>
+        <div><span>Looking for</span><b>MSc place and scholarship<br>ML engineer roles</b></div>
+        <div><span>ORCID</span><b><a href="https://orcid.org/0009-0002-9274-4850" target="_blank" rel="noopener">0009-0002-9274-4850</a></b></div>
+      </div>
+      <div class="now rv">
+        <div class="nowtitle"><i></i>Right now</div>
+        <ul>
+          <li><b>ML intern</b> at FlyRank AI</li>
+          <li><b>Thesis</b> on causal uplift modelling</li>
+          <li><b>3 papers</b> in peer review</li>
+          <li><b>MSc applications</b> under way</li>
+        </ul>
+      </div>
+    </aside>
   </div>
 </section>
 
@@ -288,7 +368,7 @@ footer{padding:10px 0 40px;font-size:13px;color:var(--muted);display:flex;justif
     <div class="rv">
       <div class="kicker">Research</div>
       <h2>Papers <em>under review</em></h2>
-      <p class="intro" style="margin-bottom:0">Three papers submitted in 2026, one journal article and two conference papers. Each one tests a model under conditions that are harder than the standard benchmark and then asks what the model is actually looking at.</p>
+      <p class="intro" style="margin-bottom:0">One journal article and two conference papers, submitted in 2026. Each one pushes a model past the clean benchmark, then checks what it is really looking at.</p>
     </div>
     <div class="rv"><div class="leafcard"><canvas id="leaf" aria-label="Animated leaf with a Grad-CAM style attention map"></canvas>
       <span class="chip" style="left:12px;top:12px">Grad-CAM style attention</span><span class="chip" style="left:12px;bottom:12px" id="leafLabel">looking at: lesion</span></div></div>
@@ -299,7 +379,8 @@ footer{padding:10px 0 40px;font-size:13px;color:var(--muted);display:flex;justif
       <h3>Beyond clean accuracy: controlled robustness evaluation and corruption-aware training for plant disease classification</h3>
       <div class="venue">International Journal of Information Technology and Computer Science (IJITCS), MECS Press</div>
       <div class="authors"><b>Nadim Mahmud</b>, Md. Siyam Hossain, Mehedi Hasan Riyad, Jannatul Jeor Bushra, Jul Jalal Al-Mamur Sayor</div>
-      <p>Plant disease classifiers report very high accuracy on PlantVillage, where every photo is clean. I tested four CNNs on nine corrupted versions of the test set (noise, low light and blur at three levels) and trained ResNet50 with those corruptions to see how much of the lost accuracy comes back. Grad-CAM and calibration checks show whether the models look at the lesions and whether their confidence can be trusted.</p>
+      <p class="q">Do plant disease classifiers still work when the photo is blurred, noisy or dark?</p>
+      <details><summary>What I did</summary><p>Plant disease classifiers report very high accuracy on PlantVillage, where every photo is clean. I tested four CNNs on nine corrupted versions of the test set (noise, low light and blur at three levels) and trained ResNet50 with those corruptions to see how much of the lost accuracy comes back. Grad-CAM and calibration checks show whether the models look at the lesions and whether their confidence can be trusted.</p></details>
       <div class="tags"><span>PyTorch</span><span>EfficientNetV2-S</span><span>ResNet50</span><span>DenseNet121</span><span>Robustness</span><span>Grad-CAM</span><span>Calibration</span></div>
     </div>
     <figure class="viz">
@@ -317,7 +398,8 @@ footer{padding:10px 0 40px;font-size:13px;color:var(--muted);display:flex;justif
       <h3>Attention-enhanced deep learning for microplastic segmentation in scanning electron microscopy images</h3>
       <div class="venue">International Conference on Advances in Artificial Intelligence (AAI 2026), Malaysia</div>
       <div class="authors"><b>Nadim Mahmud</b> and co-authors</div>
-      <p>Counting and measuring microplastic particles in SEM images is slow by hand. I compared a U-Net with a four-gate Attention U-Net for pixel-level segmentation, removed the gates one at a time to see which ones matter, and tested both models under noise and changes in brightness and contrast.</p>
+      <p class="q">Can attention gates help a U-Net find tiny plastic particles in electron microscope images?</p>
+      <details><summary>What I did</summary><p>Counting and measuring microplastic particles in SEM images is slow by hand. I compared a U-Net with a four-gate Attention U-Net for pixel-level segmentation, removed the gates one at a time to see which ones matter, and tested both models under noise and changes in brightness and contrast.</p></details>
       <div class="tags"><span>Semantic segmentation</span><span>U-Net</span><span>Attention U-Net</span><span>Ablation study</span><span>SEM imaging</span></div>
     </div>
     <figure class="viz">
@@ -331,7 +413,8 @@ footer{padding:10px 0 40px;font-size:13px;color:var(--muted);display:flex;justif
       <h3>Explainable machine learning for individual carbon-footprint prediction from traditional, digital and AI behaviours</h3>
       <div class="venue">International conference, 2026</div>
       <div class="authors"><b>Nadim Mahmud</b> and co-authors</div>
-      <p>Most carbon-footprint models use housing, transport and diet. This paper adds digital habits and AI use to the picture. I compared XGBoost, an MLP and Random Forest in a leakage-safe pipeline and used SHAP to see which behaviours drive each prediction.</p>
+      <p class="q">Which everyday habits, including digital and AI use, drive a person's carbon footprint?</p>
+      <details><summary>What I did</summary><p>Most carbon-footprint models use housing, transport and diet. This paper adds digital habits and AI use to the picture. I compared XGBoost, an MLP and Random Forest in a leakage-safe pipeline and used SHAP to see which behaviours drive each prediction.</p></details>
       <div class="tags"><span>XGBoost</span><span>SHAP</span><span>Tabular ML</span><span>Sustainability</span></div>
     </div>
     <figure class="viz carbon">
@@ -350,7 +433,7 @@ footer{padding:10px 0 40px;font-size:13px;color:var(--muted);display:flex;justif
 <section class="block" id="projects" data-order-r="3" data-order-i="2">
   <div class="kicker rv">Projects</div>
   <h2 class="rv">Things I've <em>built</em></h2>
-  <p class="intro rv">Code and notebooks are on GitHub. Each project compares the model against a simple baseline, because a high score means little without one.</p>
+  <p class="intro rv">Every project is checked against a simple baseline, because a high score means little without one.</p>
   <article class="feature rv">
     <div class="fig tabsfig">
       <div class="seg" id="irrTabs"><button class="on" data-t="try">Try it</button><button data-t="method">Method</button><button data-t="robust">Sensor faults</button><button data-t="calib">Calibration</button><button data-t="feat">Features</button></div>
@@ -372,9 +455,10 @@ footer{padding:10px 0 40px;font-size:13px;color:var(--muted);display:flex;justif
     <div class="body">
       <div class="badges"><span class="badge g">Open source</span><span class="badge n">Personal project</span></div>
       <h3>IrrigaSmart: predicting soil-moisture risk 12 hours ahead</h3>
-      <p>Will this vegetable field drop below the irrigation threshold in the next 12 hours? I used open sensor, weather and field data from farms in Flanders, Belgium. Most of the work went into the data: removing faulty sensor readings, building a target that only looks forward, and splitting by crop cycle so the test fields never leak into training.</p>
+      <p>Will this field drop below the irrigation threshold in the next 12 hours? Open sensor, weather and field data from farms in Belgium.</p>
+      <ol class="pipe"><li>Clean faulty sensors</li><li>Forward-looking target</li><li>Split by crop cycle</li><li>Beat a simple rule</li></ol>
       <div class="metrics"><div><b>0.977</b>test F1</div><div><b>0.999</b>ROC-AUC</div><div><b>&lt;0.003</b>F1 drop, 30% sensor faults</div></div>
-      <p style="font-size:14px;color:var(--muted)">A simple threshold rule reaches F1 0.972, so the model's gain is in recall: it misses 44 at-risk cases against 81 for the rule.</p>
+      <p style="font-size:14px;color:var(--muted)">A simple rule already scores F1 0.972. The model's edge is recall: 44 missed at-risk cases against 81.</p>
       <div class="tags"><span>scikit-learn</span><span>HistGradientBoosting</span><span>Feature engineering</span><span>Time series</span><span>Calibration</span></div>
       <a class="link" href="https://github.com/nadim7009/irrigasmart-soil-moisture-risk" target="_blank" rel="noopener">View on GitHub →</a>
     </div>
@@ -382,14 +466,27 @@ footer{padding:10px 0 40px;font-size:13px;color:var(--muted);display:flex;justif
   <div class="grid2">
     <article class="proj rv">
       <div class="badges"><span class="badge n">Thesis</span><span class="badge g">In progress</span></div>
-      <h3>Mitigating the correlation trap in email marketing with causal uplift modelling</h3>
-      <p>A model that predicts who will buy is not the same as a model that predicts who will buy because of the email. Using the Hillstrom campaign data with injected confounding, I compare predictive models with causal uplift models to measure how often correlation-based targeting picks the wrong customers.</p>
+      <h3>The correlation trap in email marketing</h3>
+      <p>Who buys <em>because</em> of an email, not just after one? I compare predictive and causal uplift models on the Hillstrom campaign data. Tap a group:</p>
+      <div class="uplift" id="uplift">
+        <button data-u="0" class="on"><b>Persuadables</b><small>buy only if emailed</small></button>
+        <button data-u="1"><b>Sure things</b><small>buy anyway</small></button>
+        <button data-u="2"><b>Lost causes</b><small>never buy</small></button>
+        <button data-u="3"><b>Sleeping dogs</b><small>emailing puts them off</small></button>
+      </div>
+      <p class="upnote" id="upnote">The only group worth emailing. Uplift models aim straight at them.</p>
       <div class="tags"><span>Causal inference</span><span>Uplift modelling</span><span>Python</span></div>
     </article>
     <article class="proj rv">
       <div class="badges"><span class="badge">Paper under review</span></div>
       <h3>Robust plant disease classification</h3>
-      <p>The code behind paper 01: a leakage-aware PlantVillage split, a nine-condition corruption benchmark, four CNN architectures, a corruption-aware training ablation, Grad-CAM and calibration. Four notebooks, written for Colab and Kaggle GPUs.</p>
+      <p>The code behind paper 01, in four notebooks:</p>
+      <ol class="steps">
+        <li>Leakage-aware PlantVillage split</li>
+        <li>Nine-condition corruption benchmark</li>
+        <li>Four CNNs and a corruption-aware training ablation</li>
+        <li>Grad-CAM and calibration checks</li>
+      </ol>
       <div class="tags"><span>PyTorch</span><span>Transfer learning</span><span>Data augmentation</span></div>
       <p class="muted-link">Repository goes public once the paper is published.</p>
     </article>
@@ -397,13 +494,23 @@ footer{padding:10px 0 40px;font-size:13px;color:var(--muted);display:flex;justif
 </section>
 
 <section class="block" id="experience" data-order-r="5" data-order-i="4">
-  <div class="kicker rv">Experience</div>
-  <h2 class="rv">Where I've <em>worked</em></h2>
+  <div class="xp">
+  <div class="xpleft">
+    <div class="kicker rv">Experience</div>
+    <h2 class="rv">Where I've <em>worked</em></h2>
+    <div class="xstats rv">
+      <div><b>2</b>internships</div>
+      <div><b>1</b>promotion</div>
+      <div><b>2+ yrs</b>club leadership</div>
+    </div>
+    <p class="xnote rv">Machine learning work now, product and business work before it. Both taught me to start from the problem, not the model.</p>
+  </div>
   <div class="timeline">
-    <div class="item rv"><div class="when">Jun 2026 to present · Remote</div><h3>Machine Learning Intern</h3><div class="org">FlyRank AI</div><p>I prepare and clean datasets for machine learning experiments, evaluate models and write up how they compare.</p></div>
-    <div class="item rv"><div class="when">Dec 2025 to Apr 2026 · Remote</div><h3>Product Manager Intern, then Junior Business Development Executive</h3><div class="org">TQ-Tech, a startup</div><p>Four months as a product manager intern: I wrote product requirements and feature specs for the developers and ran user and market research, including competitor analysis. In April 2026 I moved into a junior business development role.</p></div>
+    <div class="item rv"><div class="when">Jun 2026 to present · Remote</div><h3>Machine Learning Intern</h3><div class="org">FlyRank AI</div><p>Data preparation and model evaluation.</p></div>
+    <div class="item rv"><div class="when">Dec 2025 to Apr 2026 · Remote</div><h3>Product Manager Intern, then Junior Business Development Executive</h3><div class="org">TQ-Tech, a startup</div><p>Product requirements, feature specs, user and market research. Then a month in business development.</p></div>
     <div class="item rv"><div class="when">Oct 2023 to Jan 2026 · Dhaka</div><h3>Media Executive</h3><div class="org">DIU Software Engineering Club</div><p>Handled media and public relations for club events.</p></div>
     <div class="item rv"><div class="when">Volunteer</div><h3>Event volunteer</h3><div class="org">International Robotics Olympiad · Prothom Alo Math Olympiad · Prothom Alo Bondhushova</div></div>
+  </div>
   </div>
 </section>
 
@@ -423,9 +530,11 @@ footer{padding:10px 0 40px;font-size:13px;color:var(--muted);display:flex;justif
 <section class="block" id="education" data-order-r="4" data-order-i="6">
   <div class="kicker rv">Education</div>
   <h2 class="rv">Education and <em>certificates</em></h2>
-  <div class="edu">
-    <article class="proj rv"><div class="meta">2026 (expected) · Dhaka, Bangladesh</div><h3 style="margin-top:6px">B.Sc. in Software Engineering, major in Data Science</h3><p>Daffodil International University. CGPA 3.73 / 4.00. Thesis on causal uplift modelling.</p></article>
-    <article class="proj rv"><div class="meta">Certificate · Ostad</div><h3 style="margin-top:6px">Data Science and Machine Learning with Python for Beginners</h3><p>Python, data analysis and the core machine learning workflow.</p><a class="link" href="https://ostad.app/share/certificate/c37395-nadim-mahmud" target="_blank" rel="noopener">View certificate →</a></article>
+  <div class="edupath">
+    <article class="ecard rv"><div class="ring" style="--p:93.25"><span>3.73<small>/ 4.00</small></span></div><div><div class="meta">B.Sc. · expected 2026</div><h3>Software Engineering, major in Data Science</h3><p>Daffodil International University, Dhaka. Thesis on causal uplift modelling.</p></div></article>
+    <article class="ecard rv"><div class="ring" style="--p:100"><span>5.00<small>/ 5.00</small></span></div><div><div class="meta">HSC</div><h3>Higher Secondary Certificate</h3><p>Milestone College, Dhaka. GPA 5.00 out of 5.00.</p></div></article>
+    <article class="ecard rv"><div class="ring" style="--p:95.8"><span>4.79<small>/ 5.00</small></span></div><div><div class="meta">SSC</div><h3>Secondary School Certificate</h3><p>Asiya Bari Idea School. GPA 4.79 out of 5.00.</p></div></article>
+    <article class="ecard rv"><div class="ring cert"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg></div><div><div class="meta">Certificate · Ostad</div><h3>Data Science and Machine Learning with Python</h3><p><a class="link" style="margin-top:4px" href="https://ostad.app/share/certificate/c37395-nadim-mahmud" target="_blank" rel="noopener">View certificate →</a></p></div></article>
   </div>
 </section>
 
@@ -436,8 +545,8 @@ footer{padding:10px 0 40px;font-size:13px;color:var(--muted);display:flex;justif
       <h2>Let's <em>talk</em>.</h2>
       <p>If you supervise research in robust or explainable computer vision, or you are hiring for machine learning roles, I would like to hear from you. Email is the fastest way to reach me.</p>
       <div class="cta" style="margin-bottom:0">
-        <a class="btn p" href="Nadim_Mahmud_Research_CV.pdf" target="_blank" rel="noopener">Research CV</a>
-        <a class="btn s" href="Nadim_Mahmud_Resume_ML_Engineer.pdf" target="_blank" rel="noopener">Industry resume</a>
+        <a class="btn p" href="research-cv.html" target="_blank" rel="noopener">Research CV</a>
+        <a class="btn s" href="resume.html" target="_blank" rel="noopener">Industry resume</a>
       </div>
     </div>
     <div class="clist">
@@ -456,7 +565,7 @@ footer{padding:10px 0 40px;font-size:13px;color:var(--muted);display:flex;justif
 <script>
 (function(){
 /* view toggle */
-var CV={research:'Nadim_Mahmud_Research_CV.pdf',industry:'Nadim_Mahmud_Resume_ML_Engineer.pdf'};
+var CV={research:'research-cv.html',industry:'resume.html'};
 var sections=[].slice.call(document.querySelectorAll('[data-order-r]'));
 function setMode(m,push){
   document.querySelectorAll('.mode button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m)});
@@ -690,6 +799,10 @@ if(soil){
 }
 var rt2;addEventListener('resize',function(){clearTimeout(rt2);rt2=setTimeout(function(){if(g9.length)drawG9();if(sem&&SW)buildSem();if(soil)drawSoil()},200)});
 })();
+/* uplift groups */
+(function(){var N=['The only group worth emailing. Uplift models aim straight at them.','They buy either way, so the email adds nothing. A response model still loves them.','No email changes their mind. Contacting them only costs money.','The email makes them less likely to buy. A correlation-based model can still target them.'];
+var bs=document.querySelectorAll('#uplift button'),note=document.getElementById('upnote');
+bs.forEach(function(b){b.onclick=function(){bs.forEach(function(z){z.classList.toggle('on',z===b)});note.textContent=N[+b.dataset.u]}})})();
 </script>
 </body>
 </html>
