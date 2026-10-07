@@ -609,7 +609,7 @@ endstream
 endobj
 16 0 obj
 <<
-/Length 10956
+/Length 10962
 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -836,7 +836,7 @@ q
 1 0 0 1 393.0463 0 cm
 q
 .121569 .152941 .2 rg
-BT 1 0 0 1 0 2.8 Tm /F1 9.6 Tf 12.4 TL 27.60801 0 Td (Jun 2026 \226 Present) Tj T* -27.60801 0 Td ET
+BT 1 0 0 1 0 2.8 Tm /F1 9.6 Tf 12.4 TL 19.59201 0 Td (Jun 2026 \226 Sep 2026) Tj T* -19.59201 0 Td ET
 Q
 Q
 q
@@ -876,7 +876,7 @@ q
 1 0 0 1 57.68504 506.774 cm
 q
 .121569 .152941 .2 rg
-BT 1 0 0 1 0 2.8 Tm /F1 9.6 Tf 12.4 TL (Prepare and clean datasets for machine learning experiments.) Tj T* ET
+BT 1 0 0 1 0 2.8 Tm /F1 9.6 Tf 12.4 TL (Prepared and cleaned datasets for machine learning experiments.) Tj T* ET
 Q
 Q
 q
@@ -889,7 +889,7 @@ q
 1 0 0 1 57.68504 494.374 cm
 q
 .121569 .152941 .2 rg
-BT 1 0 0 1 0 2.8 Tm /F1 9.6 Tf 12.4 TL (Evaluate models, compare metrics across runs and write up the results for the team.) Tj T* ET
+BT 1 0 0 1 0 2.8 Tm /F1 9.6 Tf 12.4 TL (Evaluated models, compared metrics across runs and wrote up the results for the team.) Tj T* ET
 Q
 Q
 q
@@ -1199,5 +1199,5 @@ trailer
 /Size 17
 >>
 startxref
-24907
+24913
 %%EOF
