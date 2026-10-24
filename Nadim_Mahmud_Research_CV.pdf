@@ -93,7 +93,7 @@ endobj
 endobj
 15 0 obj
 <<
-/Length 11597
+/Length 11727
 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -395,7 +395,7 @@ q
 1 0 0 1 45.68504 391.374 cm
 q
 .121569 .152941 .2 rg
-BT 1 0 0 1 0 2.8 Tm /F1 9.6 Tf 12.4 TL (All three papers were submitted in 2026 and are under peer review.) Tj T* ET
+BT 1 0 0 1 0 2.8 Tm /F1 9.6 Tf 12.4 TL (Papers [2] and [3] are accepted at AAI 2026. Paper [1] is under review.) Tj T* ET
 Q
 Q
 q
@@ -446,7 +446,7 @@ Q
 q
 1 0 0 1 57.68504 283.174 cm
 q
-BT 1 0 0 1 0 15.2 Tm 12.4 TL /F2 9.6 Tf .121569 .152941 .2 rg (N. Mahmud) Tj /F1 9.6 Tf ( \(second author\) and co-authors. Submitted to the International Conference on Advances in Artificial) Tj T* (Intelligence \(AAI 2026\), UniMAP, Malaysia. Under review.) Tj T* ET
+BT 1 0 0 1 0 15.2 Tm 12.4 TL /F2 9.6 Tf .121569 .152941 .2 rg (N. Mahmud) Tj /F1 9.6 Tf ( \(second author\) and co-authors. Accepted at the International Conference on Advances in Artificial) Tj T* (Intelligence \(AAI 2026\), UniMAP, Langkawi, Malaysia, December 2026.) Tj T* ET
 Q
 Q
 q
@@ -470,26 +470,26 @@ BT 1 0 0 1 0 15.2 Tm /F2 9.6 Tf 12.4 TL ([3] Explainable machine learning for in
 Q
 Q
 q
-1 0 0 1 45.68504 229.074 cm
+1 0 0 1 45.68504 216.674 cm
 BT /F1 7 Tf 8.4 TL ET
 0 0 0 rg
-BT 1 0 0 1 0 3.9 Tm (\177) Tj T* ET
+BT 1 0 0 1 0 16.3 Tm (\177) Tj T* ET
 Q
 q
-1 0 0 1 57.68504 229.074 cm
+1 0 0 1 57.68504 216.674 cm
 q
-BT 1 0 0 1 0 2.8 Tm 12.4 TL /F2 9.6 Tf .121569 .152941 .2 rg (N. Mahmud) Tj /F1 9.6 Tf ( \(second author\) and co-authors. Submitted to an international conference. Under review.) Tj T* ET
+BT 1 0 0 1 0 15.2 Tm 12.4 TL /F2 9.6 Tf .121569 .152941 .2 rg (N. Mahmud) Tj /F1 9.6 Tf ( \(second author\) and co-authors. Accepted for oral presentation at the International Conference on) Tj T* (Advances in Artificial Intelligence \(AAI 2026\), UniMAP, Langkawi, Malaysia, December 2026.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 45.68504 207.074 cm
+1 0 0 1 45.68504 194.674 cm
 q
 .121569 .227451 .372549 rg
 BT 1 0 0 1 0 2.5 Tm /F2 10.5 Tf 13 TL (RESEARCH EXPERIENCE) Tj T* ET
 Q
 Q
 q
-1 0 0 1 45.68504 204.974 cm
+1 0 0 1 45.68504 192.574 cm
 q
 1.1 w
 1 J
@@ -498,7 +498,7 @@ n 0 0 m 503.9055 0 l S
 Q
 Q
 q
-1 0 0 1 45.68504 186.574 cm
+1 0 0 1 45.68504 174.174 cm
 q
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
@@ -521,7 +521,7 @@ Q
 Q
 Q
 q
-1 0 0 1 45.68504 174.174 cm
+1 0 0 1 45.68504 161.774 cm
 q
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
@@ -540,65 +540,65 @@ Q
 Q
 Q
 q
-1 0 0 1 45.68504 148.374 cm
+1 0 0 1 45.68504 135.974 cm
 BT /F1 7 Tf 8.4 TL ET
 0 0 0 rg
 BT 1 0 0 1 0 16.3 Tm (\177) Tj T* ET
 Q
 q
-1 0 0 1 57.68504 148.374 cm
+1 0 0 1 57.68504 135.974 cm
 q
 .121569 .152941 .2 rg
 BT 1 0 0 1 0 15.2 Tm /F1 9.6 Tf 12.4 TL (Designed a controlled benchmark: Gaussian noise, brightness reduction and Gaussian blur at three severity levels) Tj T* (each, applied to the PlantVillage test set \(54,305 images, 38 classes\).) Tj T* ET
 Q
 Q
 q
-1 0 0 1 45.68504 123.574 cm
+1 0 0 1 45.68504 111.174 cm
 BT /F1 7 Tf 8.4 TL ET
 0 0 0 rg
 BT 1 0 0 1 0 16.3 Tm (\177) Tj T* ET
 Q
 q
-1 0 0 1 57.68504 123.574 cm
+1 0 0 1 57.68504 111.174 cm
 q
 .121569 .152941 .2 rg
 BT 1 0 0 1 0 15.2 Tm /F1 9.6 Tf 12.4 TL (Built a group-aware split that keeps all photos of one leaf on the same side, to stop near-duplicate images from) Tj T* (inflating validation scores.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 45.68504 111.174 cm
+1 0 0 1 45.68504 98.77402 cm
 BT /F1 7 Tf 8.4 TL ET
 0 0 0 rg
 BT 1 0 0 1 0 3.9 Tm (\177) Tj T* ET
 Q
 q
-1 0 0 1 57.68504 111.174 cm
+1 0 0 1 57.68504 98.77402 cm
 q
 .121569 .152941 .2 rg
 BT 1 0 0 1 0 2.8 Tm /F1 9.6 Tf 12.4 TL (Measured how much accuracy a strong EfficientNetV2-S baseline loses under each corruption and severity.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 45.68504 86.37402 cm
+1 0 0 1 45.68504 73.97402 cm
 BT /F1 7 Tf 8.4 TL ET
 0 0 0 rg
 BT 1 0 0 1 0 16.3 Tm (\177) Tj T* ET
 Q
 q
-1 0 0 1 57.68504 86.37402 cm
+1 0 0 1 57.68504 73.97402 cm
 q
 .121569 .152941 .2 rg
 BT 1 0 0 1 0 15.2 Tm /F1 9.6 Tf 12.4 TL (Tested corruption-aware training of ResNet50 with each corruption alone and all three together, tracking clean,) Tj T* (mean corrupted and worst-case accuracy.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 45.68504 61.57402 cm
+1 0 0 1 45.68504 49.17402 cm
 BT /F1 7 Tf 8.4 TL ET
 0 0 0 rg
 BT 1 0 0 1 0 16.3 Tm (\177) Tj T* ET
 Q
 q
-1 0 0 1 57.68504 61.57402 cm
+1 0 0 1 57.68504 49.17402 cm
 q
 .121569 .152941 .2 rg
 BT 1 0 0 1 0 15.2 Tm /F1 9.6 Tf 12.4 TL (Compared four architectures and checked model reliability with Grad-CAM, reliability diagrams, expected calibration) Tj T* (error and multiclass Brier score.) Tj T* ET
@@ -1187,7 +1187,7 @@ xref
 0000001887 00000 n 
 0000002180 00000 n 
 0000002248 00000 n 
-0000013898 00000 n 
+0000014028 00000 n 
 trailer
 <<
 /ID 
@@ -1199,5 +1199,5 @@ trailer
 /Size 17
 >>
 startxref
-24913
+25043
 %%EOF

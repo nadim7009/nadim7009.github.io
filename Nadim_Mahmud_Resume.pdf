@@ -86,7 +86,7 @@ endobj
 endobj
 14 0 obj
 <<
-/Length 10170
+/Length 10208
 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -136,7 +136,7 @@ q
 1 0 0 1 45.68504 646.574 cm
 q
 .121569 .152941 .2 rg
-BT 1 0 0 1 0 52.4 Tm /F1 9.6 Tf 12.4 TL (Machine learning engineer in the final semester of a B.Sc. in Software Engineering with a data science major \(CGPA) Tj T* (3.73/4.00\). I train and evaluate deep learning models for image classification and segmentation, and gradient boosting) Tj T* -0.044889 Tw (models for tabular data, in Python with PyTorch and scikit-learn. My projects focus on what happens after the first good) Tj T* 0 Tw (score: leakage-safe data splits, stress tests with corrupted inputs, calibration checks and SHAP or Grad-CAM) Tj T* (explanations. Three research papers submitted in 2026.) Tj T* ET
+BT 1 0 0 1 0 52.4 Tm /F1 9.6 Tf 12.4 TL (Machine learning engineer in the final semester of a B.Sc. in Software Engineering with a data science major \(CGPA) Tj T* (3.73/4.00\). I train and evaluate deep learning models for image classification and segmentation, and gradient boosting) Tj T* -0.044889 Tw (models for tabular data, in Python with PyTorch and scikit-learn. My projects focus on what happens after the first good) Tj T* 0 Tw (score: leakage-safe data splits, stress tests with corrupted inputs, calibration checks and SHAP or Grad-CAM) Tj T* (explanations. Two conference papers accepted at AAI 2026 and one journal paper under review.) Tj T* ET
 Q
 Q
 q
@@ -561,7 +561,7 @@ endstream
 endobj
 15 0 obj
 <<
-/Length 9646
+/Length 9750
 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -839,7 +839,7 @@ q
 1 0 0 1 45.68504 392.574 cm
 q
 .121569 .227451 .372549 rg
-BT 1 0 0 1 0 2.5 Tm /F2 10.5 Tf 13 TL (PUBLICATIONS \(UNDER REVIEW\)) Tj T* ET
+BT 1 0 0 1 0 2.5 Tm /F2 10.5 Tf 13 TL (PUBLICATIONS) Tj T* ET
 Q
 Q
 q
@@ -862,43 +862,30 @@ q
 1 0 0 1 45.68504 299.174 cm
 q
 .121569 .152941 .2 rg
-BT 1 0 0 1 0 27.6 Tm /F1 9.6 Tf 12.4 TL ("Attention-enhanced deep learning for microplastic segmentation in scanning electron microscopy images." N.) Tj T* (Mahmud \(second author\) and co-authors. Submitted to the International Conference on Advances in Artificial) Tj T* (Intelligence \(AAI 2026\), UniMAP, Malaysia. Under review. My part: the original idea and all of the code.) Tj T* ET
+BT 1 0 0 1 0 27.6 Tm /F1 9.6 Tf 12.4 TL ("Attention-enhanced deep learning for microplastic segmentation in scanning electron microscopy images." N.) Tj T* (Mahmud \(second author\) and co-authors. Accepted at the International Conference on Advances in Artificial) Tj T* (Intelligence \(AAI 2026\), UniMAP, Langkawi, Malaysia, December 2026. My part: the original idea and all of the code.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 45.68504 272.874 cm
+1 0 0 1 45.68504 260.474 cm
 q
 .121569 .152941 .2 rg
-BT 1 0 0 1 0 15.2 Tm /F1 9.6 Tf 12.4 TL ("Explainable machine learning for individual carbon-footprint prediction from traditional, digital and AI behaviours." N.) Tj T* (Mahmud \(second author\) and co-authors. Submitted to an international conference. Under review.) Tj T* ET
+BT 1 0 0 1 0 27.6 Tm /F1 9.6 Tf 12.4 TL ("Explainable machine learning for individual carbon-footprint prediction from traditional, digital and AI behaviours." N.) Tj T* (Mahmud \(second author\) and co-authors. Accepted for oral presentation at the International Conference on Advances) Tj T* (in Artificial Intelligence \(AAI 2026\), UniMAP, Langkawi, Malaysia, December 2026.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 45.68504 250.874 cm
+1 0 0 1 45.68504 238.474 cm
 q
 .121569 .227451 .372549 rg
 BT 1 0 0 1 0 2.5 Tm /F2 10.5 Tf 13 TL (CERTIFICATIONS) Tj T* ET
 Q
 Q
 q
-1 0 0 1 45.68504 248.774 cm
+1 0 0 1 45.68504 236.374 cm
 q
 1.1 w
 1 J
 .121569 .227451 .372549 RG
 n 0 0 m 503.9055 0 l S
-Q
-Q
-q
-1 0 0 1 45.68504 233.374 cm
-BT /F1 7 Tf 8.4 TL ET
-0 0 0 rg
-BT 1 0 0 1 0 3.9 Tm (\177) Tj T* ET
-Q
-q
-1 0 0 1 57.68504 233.374 cm
-q
-.121569 .152941 .2 rg
-BT 1 0 0 1 0 2.8 Tm /F1 9.6 Tf 12.4 TL (Artificial Intelligence Fundamentals, IBM SkillsBuild \(2026\)) Tj T* ET
 Q
 Q
 q
@@ -911,7 +898,7 @@ q
 1 0 0 1 57.68504 220.974 cm
 q
 .121569 .152941 .2 rg
-BT 1 0 0 1 0 2.8 Tm /F1 9.6 Tf 12.4 TL (Introduction to Generative AI, Google Cloud Skills Boost \(2026\)) Tj T* ET
+BT 1 0 0 1 0 2.8 Tm /F1 9.6 Tf 12.4 TL (Artificial Intelligence Fundamentals, IBM SkillsBuild \(2026\)) Tj T* ET
 Q
 Q
 q
@@ -924,18 +911,31 @@ q
 1 0 0 1 57.68504 208.574 cm
 q
 .121569 .152941 .2 rg
+BT 1 0 0 1 0 2.8 Tm /F1 9.6 Tf 12.4 TL (Introduction to Generative AI, Google Cloud Skills Boost \(2026\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.68504 196.174 cm
+BT /F1 7 Tf 8.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 3.9 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 57.68504 196.174 cm
+q
+.121569 .152941 .2 rg
 BT 1 0 0 1 0 2.8 Tm /F1 9.6 Tf 12.4 TL (Data Science and Machine Learning with Python for Beginners, Ostad) Tj T* ET
 Q
 Q
 q
-1 0 0 1 45.68504 186.574 cm
+1 0 0 1 45.68504 174.174 cm
 q
 .121569 .227451 .372549 rg
 BT 1 0 0 1 0 2.5 Tm /F2 10.5 Tf 13 TL (LEADERSHIP) Tj T* ET
 Q
 Q
 q
-1 0 0 1 45.68504 184.474 cm
+1 0 0 1 45.68504 172.074 cm
 q
 1.1 w
 1 J
@@ -944,7 +944,7 @@ n 0 0 m 503.9055 0 l S
 Q
 Q
 q
-1 0 0 1 45.68504 166.074 cm
+1 0 0 1 45.68504 153.674 cm
 q
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
@@ -967,13 +967,13 @@ Q
 Q
 Q
 q
-1 0 0 1 45.68504 140.274 cm
+1 0 0 1 45.68504 127.874 cm
 BT /F1 7 Tf 8.4 TL ET
 0 0 0 rg
 BT 1 0 0 1 0 16.3 Tm (\177) Tj T* ET
 Q
 q
-1 0 0 1 57.68504 140.274 cm
+1 0 0 1 57.68504 127.874 cm
 q
 .121569 .152941 .2 rg
 BT 1 0 0 1 0 15.2 Tm /F1 9.6 Tf 12.4 TL -0.003506 Tw (Ran media and public relations for club events; volunteered at the International Robotics Olympiad and Prothom Alo) Tj T* 0 Tw (Math Olympiad.) Tj T* ET
@@ -999,7 +999,7 @@ xref
 0000001693 00000 n 
 0000001981 00000 n 
 0000002048 00000 n 
-0000012271 00000 n 
+0000012309 00000 n 
 trailer
 <<
 /ID 
@@ -1011,5 +1011,5 @@ trailer
 /Size 16
 >>
 startxref
-21969
+22111
 %%EOF
