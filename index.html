@@ -372,10 +372,10 @@ body.ind .hero:after{content:"";position:absolute;top:-60px;bottom:-20px;left:50
       <a class="btn p cvlink" href="Nadim_Mahmud_Research_CV.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg><span data-r="Research CV" data-i="Resume">Research CV</span></a>
       <a class="btn s" href="#research" data-r="See my research" data-i="See my projects" id="cta2">See my research</a>
     </div>
-    <div class="facts" data-r="&lt;div&gt;&lt;b data-n=&quot;2&quot;&gt;2&lt;/b&gt;papers accepted at AAI 2026&lt;/div&gt;&lt;div&gt;&lt;b data-n=&quot;3.73&quot;&gt;3.73&lt;/b&gt;CGPA, data science major&lt;/div&gt;&lt;div&gt;&lt;b data-n=&quot;5&quot;&gt;5&lt;/b&gt;ML and deep learning projects&lt;/div&gt;" data-i="&lt;div&gt;&lt;b data-n=&quot;2&quot;&gt;2&lt;/b&gt;internships, ML and product&lt;/div&gt;&lt;div&gt;&lt;b data-n=&quot;0.977&quot;&gt;0.977&lt;/b&gt;test F1 on IrrigaSmart&lt;/div&gt;&lt;div&gt;&lt;b data-n=&quot;5&quot;&gt;5&lt;/b&gt;ML projects, end to end&lt;/div&gt;">
+    <div class="facts" data-r="&lt;div&gt;&lt;b data-n=&quot;2&quot;&gt;2&lt;/b&gt;papers accepted at AAI 2026&lt;/div&gt;&lt;div&gt;&lt;b data-n=&quot;3.73&quot;&gt;3.73&lt;/b&gt;CGPA, data science major&lt;/div&gt;&lt;div&gt;&lt;b data-n=&quot;6&quot;&gt;6&lt;/b&gt;ML and deep learning projects&lt;/div&gt;" data-i="&lt;div&gt;&lt;b data-n=&quot;2&quot;&gt;2&lt;/b&gt;internships, ML and product&lt;/div&gt;&lt;div&gt;&lt;b data-n=&quot;0.977&quot;&gt;0.977&lt;/b&gt;test F1 on IrrigaSmart&lt;/div&gt;&lt;div&gt;&lt;b data-n=&quot;6&quot;&gt;6&lt;/b&gt;ML projects, end to end&lt;/div&gt;">
       <div><b data-n="2">2</b>papers accepted at AAI 2026</div>
       <div><b data-n="3.73">3.73</b>CGPA, data science major</div>
-      <div><b data-n="5">5</b>ML and deep learning projects</div>
+      <div><b data-n="6">6</b>ML and deep learning projects</div>
     </div>
   </div>
   <div class="rv">
@@ -515,6 +515,20 @@ body.ind .hero:after{content:"";position:absolute;top:-60px;bottom:-20px;left:50
   <div class="kicker rv">Projects</div>
   <h2 class="rv" data-r="Things I've &lt;em&gt;built&lt;/em&gt;" data-i="Case &lt;em&gt;studies&lt;/em&gt;">Things I've <em>built</em></h2>
   <p class="intro rv" data-r="Every project is checked against a simple baseline, because a high score means little without one." data-i="Problem, approach and result for each project, plus the baseline it had to beat.">Every project is checked against a simple baseline, because a high score means little without one.</p>
+  <article class="feature rv">
+    <div class="fig"><a href="https://nadim7009.github.io/krishiguard/" target="_blank" rel="noopener"><img src="https://nadim7009.github.io/krishiguard/img/phones.jpg" alt="KrishiGuard on three phones: the Bangla sign-in page, the home screen and a pesticide answer checked against the DAE list" loading="lazy" style="width:100%;border-radius:10px;display:block"></a></div>
+    <div class="body">
+      <div class="badges"><span class="badge ok">Live</span><span class="badge g">Open source</span><span class="badge n">Personal project</span></div>
+      <h3>KrishiGuard: a Bangla AI assistant for farmers</h3>
+      <p>Farmers in Bangladesh type, speak or send a leaf or pesticide-bottle photo in their own dialect and get an answer in Bangla. A wrong pesticide dose can cost a farmer his health or a season, so the model never decides a number: every dose comes from the government DAE list of 4,706 registered pesticides, with the registration number shown.</p>
+      <ol class="pipe"><li>Look up the DAE list first</li><li>Gemma 4 E2B + QLoRA writes the Bangla</li><li>Drop any amount or product not in the list</li><li>llama.cpp on a free CPU server</li></ol>
+      <div class="metrics"><div><b>99.7%</b>correct on 297 messy farmer questions</div><div><b>0%</b>made-up numbers</div><div><b>55%</b>made-up numbers, same model without the lookup</div></div>
+      <p style="font-size:14px;color:var(--muted)">Also: fertilizer amounts for 85 crops from the BARC 2024 guide, spray timing from the weather forecast, answers read aloud in Bangla, accounts and a district pest radar.</p>
+      <div class="tags"><span>Gemma 4</span><span>QLoRA</span><span>llama.cpp</span><span>RAG and tools</span><span>Bangla NLP</span><span>Supabase</span></div>
+      <a class="link" href="https://nadim7009.github.io/krishiguard/" target="_blank" rel="noopener">Try the assistant →</a>
+      <a class="link" href="https://github.com/nadim7009/krishiguard" target="_blank" rel="noopener" style="margin-left:18px">Code and notebooks →</a>
+    </div>
+  </article>
   <article class="feature rv">
     <div class="fig tabsfig">
       <div class="seg" id="irrTabs"><button class="on" data-t="try">Try it</button><button data-t="method">Method</button><button data-t="robust">Sensor faults</button><button data-t="calib">Calibration</button><button data-t="feat">Features</button></div>
